@@ -38,4 +38,5 @@ export const envConfigs: ConfigMap = {
   version: packageJson.version,
   locale_detect_enabled:
     process.env.NEXT_PUBLIC_LOCALE_DETECT_ENABLED ?? 'false',
+  evolink_api_key: process.env.EVOLINK_API_KEY ?? '',
 };

@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "title": "AI Product Image Generator",
+    "description": "Generate polished ecommerce product visuals with built-in commercial prompts, styles, backgrounds, and lighting presets."
+  },
+  "page": {
+    "title": "AI Product Image Generator",
+    "description": "Turn a simple product idea into professional ecommerce photography with preset commercial styling, backgrounds, and lighting."
+  },
+  "generator": {
+    "title": "Product Image Generator",
+    "badge": "Ecommerce Ready",
+    "description": "Built for high-converting hero shots, catalog images, and marketplace-ready product visuals.",
+    "fields": {
+      "product": "What are you selling?",
+      "product_placeholder": "Example: a matte black stainless steel water bottle",
+      "details": "Key details",
+      "details_placeholder": "Materials, packaging, flavor, texture, audience, premium selling points, what should be visible on the product",
+      "brand_color": "Accent color",
+      "brand_color_placeholder": "Example: sage green, rose gold, cobalt blue",
+      "tip": "This generator uses internal commercial photography prompts so users can work through structured controls instead of writing a full prompt from scratch.",
+      "style": "Style",
+      "background": "Background",
+      "shot": "Shot Type",
+      "lighting": "Lighting",
+      "ratio": "Aspect Ratio",
+      "quality": "Quality",
+      "thinking": "Thinking Level"
+    },
+    "thinking": {
+      "auto": "Auto",
+      "min": "Fast",
+      "high": "High Quality"
+    },
+    "presets": {
+      "clean": "Clean Catalog",
+      "luxury": "Luxury Ad",
+      "organic": "Organic Lifestyle",
+      "tech": "Tech Launch",
+      "beauty": "Beauty Editorial",
+      "food": "Food Commercial",
+      "white": "Pure White",
+      "gradient": "Soft Gradient",
+      "marble": "Marble Surface",
+      "concrete": "Concrete Studio",
+      "botanical": "Botanical Set",
+      "kitchen": "Kitchen Scene",
+      "vanity": "Vanity Counter",
+      "acrylic": "Reflective Acrylic",
+      "front": "Front Hero",
+      "angle": "3/4 Angle",
+      "flatlay": "Flat Lay",
+      "floating": "Floating Shot",
+      "macro": "Macro Detail",
+      "softbox": "Softbox",
+      "daylight": "Daylight",
+      "dramatic": "Dramatic",
+      "glow": "Glow",
+      "catalog": "Catalog Neutral"
+    },
+    "prompt_preview": "Built-in Prompt Preview",
+    "empty_prompt": "Describe the product first and the internal prompt builder will compose a commercial photography prompt for you.",
+    "generate": "Generate Product Image",
+    "generating": "Generating...",
+    "progress": "Progress",
+    "preview_title": "Generated Results",
+    "preview_description": "Professional product shots will appear here after the task finishes.",
+    "empty_title": "Ready for your first product render",
+    "empty_description": "Pick the look, choose a background, then generate a polished ecommerce visual without writing a full studio prompt.",
+    "download": "Download",
+    "buy_credits": "Buy Credits",
+    "credits_cost": "Cost {credits} credits",
+    "credits_remaining": "Remaining {credits} credits",
+    "status": {
+      "pending": "Waiting for the image task to start",
+      "processing": "Rendering your ecommerce product image",
+      "success": "Image ready",
+      "failed": "Image generation failed"
+    },
+    "success": {
+      "generated": "Product image generated successfully",
+      "downloaded": "Image downloaded"
+    },
+    "errors": {
+      "product_required": "Please enter the product you want to sell.",
+      "insufficient_credits": "Insufficient credits. Please top up to continue.",
+      "failed": "Failed to generate the product image.",
+      "timeout": "Image generation timed out. Please try again.",
+      "download_failed": "Failed to download the image."
+    }
+  }
+}

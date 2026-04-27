@@ -39,6 +39,12 @@
               "icon": "RiImage2Line"
             },
             {
+              "title": "AI 电商商品图",
+              "description": "生成专业电商商品主图",
+              "url": "/ai-product-image-generator",
+              "icon": "Sparkles"
+            },
+            {
               "title": "AI 音乐生成器",
               "description": "使用 AI 生成美妙的音乐",
               "url": "/ai-music-generator",

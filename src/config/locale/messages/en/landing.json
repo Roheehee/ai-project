@@ -39,6 +39,12 @@
               "icon": "RiImage2Line"
             },
             {
+              "title": "AI Product Image Generator",
+              "description": "Generate professional ecommerce product photos",
+              "url": "/ai-product-image-generator",
+              "icon": "Sparkles"
+            },
+            {
               "title": "AI Music Generator",
               "description": "Use AI to generate music",
               "url": "/ai-music-generator",

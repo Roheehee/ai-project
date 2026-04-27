@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "title": "AI 电商商品图生成器",
+    "description": "通过内置商业摄影 Prompt、风格、背景和光线预设，生成专业电商商品图。"
+  },
+  "page": {
+    "title": "AI 电商商品图生成器",
+    "description": "输入你想卖的商品，用结构化风格、背景和光线配置，快速生成看起来专业的电商商品图。"
+  },
+  "generator": {
+    "title": "商品图生成器",
+    "badge": "电商可用",
+    "description": "为高转化主图、详情页视觉和平台白底图而设计。",
+    "fields": {
+      "product": "你要卖什么？",
+      "product_placeholder": "例如：磨砂黑不锈钢保温杯",
+      "details": "商品细节",
+      "details_placeholder": "材质、包装、卖点、目标人群、希望展示出来的细节",
+      "brand_color": "品牌点缀色",
+      "brand_color_placeholder": "例如：鼠尾草绿、玫瑰金、钴蓝",
+      "tip": "这个生成器会自动拼接商业摄影 Prompt，用户更多是选择效果，而不是自己从零写完整提示词。",
+      "style": "风格",
+      "background": "背景",
+      "shot": "构图",
+      "lighting": "光线",
+      "ratio": "画幅比例",
+      "quality": "清晰度",
+      "thinking": "思考等级"
+    },
+    "thinking": {
+      "auto": "自动",
+      "min": "快速",
+      "high": "高质量"
+    },
+    "presets": {
+      "clean": "干净目录风",
+      "luxury": "高奢广告风",
+      "organic": "自然生活风",
+      "tech": "科技发布风",
+      "beauty": "美妆大片风",
+      "food": "食品商业风",
+      "white": "纯白背景",
+      "gradient": "柔和渐变",
+      "marble": "大理石台面",
+      "concrete": "混凝土影棚",
+      "botanical": "植物生活场景",
+      "kitchen": "厨房场景",
+      "vanity": "梳妆台场景",
+      "acrylic": "亚克力反光台",
+      "front": "正面主图",
+      "angle": "3/4 角度",
+      "flatlay": "俯拍平铺",
+      "floating": "悬浮展示",
+      "macro": "微距细节",
+      "softbox": "柔光箱",
+      "daylight": "自然日光",
+      "dramatic": "戏剧打光",
+      "glow": "柔亮氛围",
+      "catalog": "中性目录光"
+    },
+    "prompt_preview": "内置 Prompt 预览",
+    "empty_prompt": "先描述商品，系统会自动帮你拼接商业商品摄影 Prompt。",
+    "generate": "生成商品图",
+    "generating": "生成中...",
+    "progress": "进度",
+    "preview_title": "生成结果",
+    "preview_description": "任务完成后，专业商品图会显示在这里。",
+    "empty_title": "准备生成第一张商品图",
+    "empty_description": "选好风格、背景和构图后，就能生成一张更像真实商业拍摄的电商视觉图。",
+    "download": "下载",
+    "buy_credits": "购买积分",
+    "credits_cost": "消耗 {credits} 积分",
+    "credits_remaining": "剩余 {credits} 积分",
+    "status": {
+      "pending": "等待任务启动",
+      "processing": "正在渲染商品图",
+      "success": "图片已生成",
+      "failed": "生成失败"
+    },
+    "success": {
+      "generated": "商品图生成成功",
+      "downloaded": "图片已下载"
+    },
+    "errors": {
+      "product_required": "请先输入你要卖的商品。",
+      "insufficient_credits": "积分不足，请先充值。",
+      "failed": "商品图生成失败。",
+      "timeout": "生成超时，请重试。",
+      "download_failed": "图片下载失败。"
+    }
+  }
+}

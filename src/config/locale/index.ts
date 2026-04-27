@@ -45,6 +45,7 @@ export const localeMessagesPaths = [
   'ai/music',
   'ai/chat',
   'ai/image',
+  'ai/product_image',
   'ai/video',
   'activity/sidebar',
   'activity/ai-tasks',
