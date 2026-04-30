@@ -22,18 +22,23 @@ export default async function DocsContentPage(props: {
 
   if (!page) notFound();
 
-  const MDXContent = page.data.body;
+  const pageData = page.data as typeof page.data & {
+    body: React.ComponentType<any>;
+    toc?: any;
+    full?: boolean;
+  };
+  const MDXContent = pageData.body;
 
   return (
     <DocsPage
-      toc={page.data.toc}
-      full={page.data.full}
+      toc={pageData.toc}
+      full={pageData.full}
       tableOfContent={{
         style: 'clerk',
       }}
     >
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsTitle>{pageData.title}</DocsTitle>
+      <DocsDescription>{pageData.description}</DocsDescription>
       <DocsBody>
         <MDXContent
           components={getMDXComponents({

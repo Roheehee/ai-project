@@ -1,6 +1,7 @@
 // .source folder will be generated when you run `next dev`
 import { createElement } from 'react';
 import { docs, logs, pages, posts } from '@/.source';
+import type { VirtualFile } from 'fumadocs-core/source';
 import type { I18nConfig } from 'fumadocs-core/i18n';
 import { loader } from 'fumadocs-core/source';
 import { icons } from 'lucide-react';
@@ -18,10 +19,18 @@ const iconHelper = (icon: string | undefined) => {
   if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
 };
 
+function normalizeSource(source: {
+  files: VirtualFile[] | (() => VirtualFile[]);
+}) {
+  return {
+    files: typeof source.files === 'function' ? source.files() : source.files,
+  };
+}
+
 // Docs source
 export const docsSource = loader({
   baseUrl: '/docs',
-  source: docs.toFumadocsSource(),
+  source: normalizeSource(docs.toFumadocsSource()),
   i18n,
   icon: iconHelper,
 });
@@ -29,7 +38,7 @@ export const docsSource = loader({
 // Pages source (using root path)
 export const pagesSource = loader({
   baseUrl: '/',
-  source: pages.toFumadocsSource(),
+  source: normalizeSource(pages.toFumadocsSource()),
   i18n,
   icon: iconHelper,
 });
@@ -37,7 +46,7 @@ export const pagesSource = loader({
 // Posts source
 export const postsSource = loader({
   baseUrl: '/blog',
-  source: posts.toFumadocsSource(),
+  source: normalizeSource(posts.toFumadocsSource()),
   i18n,
   icon: iconHelper,
 });
@@ -45,7 +54,7 @@ export const postsSource = loader({
 // Logs source
 export const logsSource = loader({
   baseUrl: '/logs',
-  source: logs.toFumadocsSource(),
+  source: normalizeSource(logs.toFumadocsSource()),
   i18n,
   icon: iconHelper,
 });

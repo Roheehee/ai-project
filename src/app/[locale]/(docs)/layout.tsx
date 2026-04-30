@@ -50,7 +50,7 @@ export default async function DocsRootLayout({
     >
       <DocsLayout
         {...baseOptions(lang)}
-        tree={source.pageTree[lang]}
+        tree={source.pageTree[lang as keyof typeof source.pageTree]}
         nav={{ ...baseOptions(lang).nav, mode: 'top' }}
         sidebar={{
           tabs: [],

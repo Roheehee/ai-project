@@ -8,7 +8,7 @@ export function getMetadata(
   options: {
     title?: string;
     description?: string;
-    keywords?: string;
+    keywords?: string | string[];
     metadataKey?: string;
     canonicalUrl?: string; // relative path or full url
     imageUrl?: string;
@@ -28,7 +28,7 @@ export function getMetadata(
     const passedMetadata = {
       title: options.title,
       description: options.description,
-      keywords: options.keywords,
+      keywords: normalizeKeywords(options.keywords),
     };
 
     // default metadata
@@ -125,8 +125,23 @@ async function getTranslatedMetadata(metadataKey: string, locale: string) {
   return {
     title: t.has('title') ? t('title') : '',
     description: t.has('description') ? t('description') : '',
-    keywords: t.has('keywords') ? t('keywords') : '',
+    keywords: normalizeKeywords(t.has('keywords') ? t('keywords') : ''),
   };
+}
+
+function normalizeKeywords(input?: string | string[]) {
+  if (!input) {
+    return [];
+  }
+
+  if (Array.isArray(input)) {
+    return input.map((item) => item.trim()).filter(Boolean);
+  }
+
+  return input
+    .split(',')
+    .map((item) => item.trim())
+    .filter(Boolean);
 }
 
 async function getCanonicalUrl(canonicalUrl: string, locale: string) {

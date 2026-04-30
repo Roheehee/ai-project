@@ -211,7 +211,11 @@ export async function getLocalPost({
     return null;
   }
 
-  const MDXContent = localPost.data.body;
+  const localPostData = localPost.data as typeof localPost.data & {
+    body: React.ComponentType<any>;
+    toc?: any;
+  };
+  const MDXContent = localPostData.body;
   const body = (
     <MDXContent
       components={getMDXComponents({
@@ -226,11 +230,11 @@ export async function getLocalPost({
   const post: BlogPostType = {
     id: localPost.path,
     slug: slug,
-    title: localPost.data.title || '',
-    description: localPost.data.description || '',
+    title: localPostData.title || '',
+    description: localPostData.description || '',
     content: '',
     body: body,
-    toc: localPost.data.toc, // Use fumadocs auto-generated TOC
+    toc: localPostData.toc, // Use fumadocs auto-generated TOC
     created_at: frontmatter.created_at
       ? getPostDate({
           created_at: frontmatter.created_at,
@@ -259,7 +263,11 @@ export async function getLocalPage({
     return null;
   }
 
-  const MDXContent = localPage.data.body;
+  const localPageData = localPage.data as typeof localPage.data & {
+    body: React.ComponentType<any>;
+    toc?: any;
+  };
+  const MDXContent = localPageData.body;
   const body = (
     <MDXContent
       components={getMDXComponents({
@@ -274,11 +282,11 @@ export async function getLocalPage({
   const post: BlogPostType = {
     id: localPage.path,
     slug: slug,
-    title: localPage.data.title || '',
-    description: localPage.data.description || '',
+    title: localPageData.title || '',
+    description: localPageData.description || '',
     content: '',
     body: body,
-    toc: localPage.data.toc, // Use fumadocs auto-generated TOC
+    toc: localPageData.toc, // Use fumadocs auto-generated TOC
     created_at: frontmatter.created_at
       ? getPostDate({
           created_at: frontmatter.created_at,
@@ -483,6 +491,9 @@ export async function getLocalPostsAndCategories({
   localPostsList.push(
     ...localPosts.map((post) => {
       const frontmatter = post.data as any;
+      const postData = post.data as typeof post.data & {
+        body?: React.ComponentType<any>;
+      };
       const slug = getPostSlug({
         url: post.url,
         locale,
@@ -490,8 +501,8 @@ export async function getLocalPostsAndCategories({
       });
 
       let body: React.ReactNode = undefined;
-      if (type === PostType.LOG) {
-        const MDXContent = post.data.body;
+      if (type === PostType.LOG && postData.body) {
+        const MDXContent = postData.body;
         body = <MDXContent components={getMDXComponents()} />;
       }
 
@@ -505,8 +516,8 @@ export async function getLocalPostsAndCategories({
       return {
         id: post.path,
         slug: slug,
-        title: post.data.title || '',
-        description: post.data.description || '',
+        title: postData.title || '',
+        description: postData.description || '',
         author_name: frontmatter.author_name || '',
         author_image: frontmatter.author_image || '',
         created_at: createdAt,
