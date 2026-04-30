@@ -1,25 +1,25 @@
 {
   "metadata": {
     "title": "价格",
-    "description": "选择方案，立即开始"
+    "description": "为商品图生成选择更适合你的积分方案"
   },
   "page": {
-    "title": "ShipAny 价格表",
+    "title": "PicShip 价格",
     "sections": {
       "pricing": {
         "id": "pricing",
-        "title": "价格",
-        "description": "获取 ShipAny 的全部功能，极速交付你的 AI SaaS 创业项目。",
+        "title": "按你的出图节奏选择方案",
+        "description": "所有方案都围绕商品主图、详情页配图和广告素材设计，更适合冷启动和持续上新。",
         "groups": [
           {
             "name": "one-time",
-            "title": "按次付费"
+            "title": "按次购买"
           },
           {
             "name": "monthly",
             "title": "包月",
             "is_featured": true,
-            "label": "立省15%"
+            "label": "更适合持续上新"
           },
           {
             "name": "yearly",
@@ -29,330 +29,282 @@
         "items": [
           {
             "title": "入门版",
-            "description": "开启你的第一个 SaaS 创业项目。",
+            "description": "适合先测试单品、快速做出第一批可上架商品图。",
             "features_title": "包含",
             "features": [
-              "100 积分，有效期 1 个月",
-              "NextJS 项目模板",
-              "SEO 友好结构",
-              "支持 Stripe 支付",
-              "Supabase 数据存储",
-              "Google Oauth & 一键登录",
-              "多语言（i18n）支持"
+              "120 积分，有效期 30 天",
+              "可生成商品主图、白底图和基础场景图",
+              "内置极简电商、高端广告、自然生活感、科技发布感 4 种风格",
+              "支持 1:1、4:5、9:16 等常用电商比例",
+              "可直接复用首页和案例页的风格预设",
+              "生成历史保留与再次编辑"
             ],
             "interval": "one-time",
-            "amount": 9900,
+            "amount": 3900,
             "currency": "USD",
-            "price": "$99",
-            "original_price": "$199",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 69900,
-                "price": "¥699",
-                "original_price": "¥1399",
-                "payment_providers": ["stripe"]
-              }
-            ],
+            "price": "$39",
+            "original_price": "$99",
             "unit": "",
             "is_featured": false,
-            "tip": "一次付费，畅享无限项目部署！",
+            "tip": "先跑通一批商品图最合适。",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "开始生成",
+              "url": "/ai-product-image-generator",
               "icon": "RiFlashlightFill"
             },
             "product_id": "starter",
-            "product_name": "ShipAny 模板入门版",
-            "credits": 100,
+            "product_name": "PicShip 入门版",
+            "credits": 120,
             "valid_days": 30,
             "group": "one-time"
           },
           {
-            "title": "标准版",
-            "description": "快速交付你的 SaaS 创业项目。",
+            "title": "成长版",
+            "description": "适合日常上新、详情页配图和广告素材一起产出的卖家团队。",
             "label": "热门",
             "features_title": "包含入门版功能，此外",
             "features": [
-              "200 积分，有效期 3 个月",
-              "支持 Vercel 或 Cloudflare 部署",
-              "自动生成隐私政策&服务条款",
-              "集成 Google Analytics",
-              "集成 Google Search Console",
-              "Discord 技术社区",
-              "首个上线项目技术支持",
-              "终身免费更新"
+              "360 积分，有效期 90 天",
+              "支持更多背景组合和更完整的商品布光方向",
+              "适合为同一商品连续生成主图、横版广告图和活动图",
+              "案例灵感中的风格可一键带入工作台",
+              "更适合多商品轮换测试封面风格",
+              "优先邮件支持"
             ],
             "interval": "one-time",
-            "amount": 19900,
+            "amount": 13900,
             "currency": "USD",
-            "price": "$199",
-            "original_price": "$299",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 139900,
-                "price": "¥1399",
-                "original_price": "¥1999",
-                "payment_providers": ["stripe"]
-              }
-            ],
+            "price": "$139",
+            "original_price": "$199",
             "unit": "",
             "is_featured": true,
-            "tip": "一次付费，畅享无限项目部署！",
+            "tip": "最适合稳定出图和持续上新。",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "开始生成",
+              "url": "/ai-product-image-generator",
               "icon": "RiFlashlightFill"
             },
             "product_id": "standard",
-            "product_name": "ShipAny 模板标准版",
-            "credits": 200,
+            "product_name": "PicShip 成长版",
+            "credits": 360,
             "valid_days": 90,
             "group": "one-time"
           },
           {
-            "title": "高级版",
-            "description": "交付任意 AI SaaS 创业项目。",
-            "features_title": "包含标准版功能，此外",
+            "title": "工作室版",
+            "description": "适合高频投放、节日营销和多个品类一起做素材储备的品牌方。",
+            "features_title": "包含成长版功能，此外",
             "features": [
-              "300 积分，有效期 1 年",
-              "内置 AI 业务功能",
-              "用户中心",
-              "积分系统",
-              "为你的 SaaS 售卖 API",
-              "后台管理系统",
-              "优先技术支持"
+              "900 积分，有效期 365 天",
+              "更适合按系列批量准备主图与广告视觉方向",
+              "支持长期沉淀可复用的商品提示词和视觉模板",
+              "适合全年上新节奏与大促节点备图",
+              "更高频率的生成与迭代空间",
+              "优先支持"
             ],
             "interval": "one-time",
-            "amount": 29900,
+            "amount": 23900,
             "currency": "USD",
-            "price": "$299",
-            "original_price": "$399",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 199900,
-                "price": "¥1999",
-                "original_price": "¥2799",
-                "payment_providers": ["stripe", "creem"]
-              }
-            ],
+            "price": "$239",
+            "original_price": "$299",
             "unit": "",
             "is_featured": false,
-            "tip": "一次付费，畅享无限项目部署！",
+            "tip": "适合把商品图当成持续生产能力来搭建。",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "开始生成",
+              "url": "/ai-product-image-generator",
               "icon": "RiFlashlightFill"
             },
             "product_id": "premium",
-            "product_name": "ShipAny 模板高级版",
-            "credits": 300,
+            "product_name": "PicShip 工作室版",
+            "credits": 900,
             "valid_days": 365,
             "group": "one-time"
           },
           {
             "title": "入门版",
-            "description": "开启你的第一个 SaaS 创业项目。",
+            "description": "适合每个月稳定做少量上新和主图迭代。",
             "features_title": "包含",
             "features": [
-              "100 积分，有效期 1 个月",
-              "NextJS 项目模板",
-              "SEO 友好结构",
-              "支持 Stripe 支付",
-              "Supabase 数据存储",
-              "Google Oauth & 一键登录",
-              "多语言（i18n）支持"
+              "每月 150 积分",
+              "4 种商品图风格和基础背景预设",
+              "常用电商比例导出",
+              "生成历史保留",
+              "适合单店铺或单品牌起步"
             ],
             "interval": "month",
-            "amount": 8900,
+            "amount": 2900,
             "currency": "USD",
-            "price": "$89",
-            "original_price": "$99",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "按月付费，畅享无限项目部署！",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter-monthly",
-            "product_name": "ShipAny 模板入门版包月",
-            "credits": 100,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "入门版"
-          },
-          {
-            "title": "标准版",
-            "description": "快速交付你的 SaaS 创业项目。",
-            "label": "热门",
-            "features_title": "包含入门版功能，此外",
-            "features": [
-              "200 积分，有效期 1 个月",
-              "支持 Vercel 或 Cloudflare 部署",
-              "自动生成隐私政策&服务条款",
-              "集成 Google Analytics",
-              "集成 Google Search Console",
-              "Discord 技术社区",
-              "首个上线项目技术支持",
-              "终身免费更新"
-            ],
-            "interval": "month",
-            "amount": 16900,
-            "currency": "USD",
-            "price": "$169",
-            "original_price": "$199",
-            "unit": "/ 月",
-            "is_featured": true,
-            "tip": "按月付费，极速上线你的 SaaS 项目。",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "standard-monthly",
-            "product_name": "ShipAny 模板标准版包月",
-            "credits": 200,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "标准版"
-          },
-          {
-            "title": "高级版",
-            "description": "交付任意 AI SaaS 创业项目。",
-            "features_title": "包含标准版功能，此外",
-            "features": [
-              "300 积分，有效期 1 个月",
-              "内置 AI 业务功能",
-              "用户中心",
-              "积分系统",
-              "为你的 SaaS 售卖 API",
-              "后台管理系统",
-              "优先技术支持"
-            ],
-            "interval": "month",
-            "amount": 24900,
-            "currency": "USD",
-            "price": "$249",
-            "original_price": "$299",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "按月付费，助你交付任何 AI SaaS 项目。",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "premium-monthly",
-            "product_name": "ShipAny 模板高级版包月",
-            "credits": 300,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "高级版"
-          },
-          {
-            "title": "入门版",
-            "description": "开启你的第一个 SaaS 创业项目。",
-            "features_title": "包含",
-            "features": [
-              "100 积分，有效期 1 年",
-              "NextJS 项目模板",
-              "SEO 友好结构",
-              "支持 Stripe 支付",
-              "Supabase 数据存储",
-              "Google Oauth & 一键登录",
-              "多语言（i18n）支持"
-            ],
-            "interval": "year",
-            "amount": 82800,
-            "currency": "USD",
-            "price": "$69",
+            "price": "$29",
             "original_price": "$89",
             "unit": "/ 月",
             "is_featured": false,
-            "tip": "按年付费，畅享无限项目部署！",
+            "tip": "低门槛开始持续出图。",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "开始生成",
+              "url": "/ai-product-image-generator",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "starter-yearly",
-            "product_name": "ShipAny 模板入门版包年",
-            "credits": 1200,
-            "valid_days": 365,
-            "group": "yearly",
+            "product_id": "starter-monthly",
+            "product_name": "PicShip 入门版包月",
+            "credits": 150,
+            "valid_days": 30,
+            "group": "monthly",
             "plan_name": "入门版"
           },
           {
-            "title": "标准版",
-            "description": "快速交付你的 SaaS 创业项目。",
+            "title": "成长版",
+            "description": "适合持续上新、持续测图和常规投放素材更新。",
             "label": "热门",
             "features_title": "包含入门版功能，此外",
             "features": [
-              "200 积分，有效期 1 年",
-              "支持 Vercel 或 Cloudflare 部署",
-              "自动生成隐私政策&服务条款",
-              "集成 Google Analytics",
-              "集成 Google Search Console",
-              "Discord 技术社区",
-              "首个上线项目技术支持",
-              "终身免费更新"
+              "每月 420 积分",
+              "更丰富的商品背景与镜头构图方向",
+              "适合同款商品做多版主图测试",
+              "支持从案例灵感页直接跳转复用风格",
+              "更适合小团队稳定产出"
             ],
-            "interval": "year",
-            "amount": 154800,
+            "interval": "month",
+            "amount": 10900,
             "currency": "USD",
-            "price": "$129",
+            "price": "$109",
             "original_price": "$169",
             "unit": "/ 月",
             "is_featured": true,
-            "tip": "按年付费，极速上线你的 SaaS 项目。",
+            "tip": "最均衡的一档，适合多数商家。",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "开始生成",
+              "url": "/ai-product-image-generator",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "standard-yearly",
-            "product_name": "ShipAny 模板标准版包年",
-            "credits": 2400,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "标准版"
+            "product_id": "standard-monthly",
+            "product_name": "PicShip 成长版包月",
+            "credits": 420,
+            "valid_days": 30,
+            "group": "monthly",
+            "plan_name": "成长版"
           },
           {
-            "title": "高级版",
-            "description": "交付任意 AI SaaS 创业项目。",
-            "features_title": "包含标准版功能，此外",
+            "title": "工作室版",
+            "description": "适合高频做新品、活动图和广告图的团队。",
+            "features_title": "包含成长版功能，此外",
             "features": [
-              "300 积分，有效期 1 年",
-              "内置 AI 业务功能",
-              "用户中心",
-              "积分系统",
-              "为你的 SaaS 售卖 API",
-              "后台管理系统",
-              "优先技术支持"
+              "每月 960 积分",
+              "更适合多品类高频率生成",
+              "全年活动节奏可持续补图和重做风格",
+              "更大的测试空间和迭代余量",
+              "优先支持"
             ],
-            "interval": "year",
-            "amount": 226800,
+            "interval": "month",
+            "amount": 18900,
             "currency": "USD",
             "price": "$189",
             "original_price": "$249",
             "unit": "/ 月",
             "is_featured": false,
-            "tip": "按年付费，助你交付任何 AI SaaS 项目。",
+            "tip": "适合把商品图生产纳入日常运营。",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
+              "title": "开始生成",
+              "url": "/ai-product-image-generator",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "premium-monthly",
+            "product_name": "PicShip 工作室版包月",
+            "credits": 960,
+            "valid_days": 30,
+            "group": "monthly",
+            "plan_name": "工作室版"
+          },
+          {
+            "title": "入门版",
+            "description": "适合一年内持续做基础商品图和主图维护。",
+            "features_title": "包含",
+            "features": [
+              "每年 1800 积分",
+              "全年保留基础风格与背景预设",
+              "适合长期维护单店铺商品图",
+              "年度成本更低"
+            ],
+            "interval": "year",
+            "amount": 10800,
+            "currency": "USD",
+            "price": "$9",
+            "original_price": "$69",
+            "unit": "/ 月",
+            "is_featured": false,
+            "tip": "按年锁定更低成本。",
+            "button": {
+              "title": "开始生成",
+              "url": "/ai-product-image-generator",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "starter-yearly",
+            "product_name": "PicShip 入门版包年",
+            "credits": 1800,
+            "valid_days": 365,
+            "group": "yearly",
+            "plan_name": "入门版"
+          },
+          {
+            "title": "成长版",
+            "description": "适合全年保持商品图迭代节奏的团队。",
+            "label": "热门",
+            "features_title": "包含入门版功能，此外",
+            "features": [
+              "每年 5040 积分",
+              "适合全年上新、改版和活动图延展",
+              "多种风格方向可持续测试",
+              "更适合把商品图工作流固定下来"
+            ],
+            "interval": "year",
+            "amount": 82800,
+            "currency": "USD",
+            "price": "$69",
+            "original_price": "$129",
+            "unit": "/ 月",
+            "is_featured": true,
+            "tip": "最适合长期做图的稳定方案。",
+            "button": {
+              "title": "开始生成",
+              "url": "/ai-product-image-generator",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "standard-yearly",
+            "product_name": "PicShip 成长版包年",
+            "credits": 5040,
+            "valid_days": 365,
+            "group": "yearly",
+            "plan_name": "成长版"
+          },
+          {
+            "title": "工作室版",
+            "description": "适合把主图、详情页和广告素材都纳入同一套年度产能。",
+            "features_title": "包含成长版功能，此外",
+            "features": [
+              "每年 11520 积分",
+              "适合大促、投放和多品类长期备图",
+              "更充足的迭代空间和年度素材储备",
+              "优先支持"
+            ],
+            "interval": "year",
+            "amount": 154800,
+            "currency": "USD",
+            "price": "$129",
+            "original_price": "$189",
+            "unit": "/ 月",
+            "is_featured": false,
+            "tip": "适合把全年视觉产出稳定下来。",
+            "button": {
+              "title": "开始生成",
+              "url": "/ai-product-image-generator",
               "icon": "RiFlashlightFill"
             },
             "product_id": "premium-yearly",
-            "product_name": "ShipAny 模板高级版包年",
-            "credits": 3600,
+            "product_name": "PicShip 工作室版包年",
+            "credits": 11520,
             "valid_days": 365,
             "group": "yearly",
-            "plan_name": "高级版"
+            "plan_name": "工作室版"
           }
         ]
       }

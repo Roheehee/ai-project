@@ -24,7 +24,9 @@ export function DashboardLayout({
       {sidebar && (
         <Sidebar variant={sidebar.variant || 'inset'} sidebar={sidebar} />
       )}
-      <SidebarInset>{children}</SidebarInset>
+      <SidebarInset className="bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-background)_94%,white),color-mix(in_oklab,var(--color-secondary)_18%,var(--color-background)))]">
+        {children}
+      </SidebarInset>
     </SidebarProvider>
   );
 }

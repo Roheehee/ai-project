@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "AI 电商商品图生成器",
-    "description": "通过内置商业摄影 Prompt、风格、背景和光线预设，生成专业电商商品图。"
+    "description": "通过风格、背景和光线预设，生成专业电商商品图。"
   },
   "page": {
     "title": "AI 电商商品图生成器",
@@ -15,22 +15,21 @@
       "product": "你要卖什么？",
       "product_placeholder": "例如：磨砂黑不锈钢保温杯",
       "details": "商品细节",
-      "details_placeholder": "材质、包装、卖点、目标人群、希望展示出来的细节",
+      "details_placeholder": "例如：304不锈钢保温杯，磨砂黑外观，适合上班族，突出便携和保温卖点",
       "brand_color": "品牌点缀色",
       "brand_color_placeholder": "例如：鼠尾草绿、玫瑰金、钴蓝",
-      "tip": "这个生成器会自动拼接商业摄影 Prompt，用户更多是选择效果，而不是自己从零写完整提示词。",
       "style": "风格",
       "background": "背景",
       "shot": "构图",
       "lighting": "光线",
       "ratio": "画幅比例",
       "quality": "清晰度",
-      "thinking": "思考等级"
+      "thinking": "出图模式"
     },
     "thinking": {
-      "auto": "自动",
+      "auto": "平衡",
       "min": "快速",
-      "high": "高质量"
+      "high": "细致"
     },
     "presets": {
       "clean": "干净目录风",
@@ -58,15 +57,13 @@
       "glow": "柔亮氛围",
       "catalog": "中性目录光"
     },
-    "prompt_preview": "内置 Prompt 预览",
-    "empty_prompt": "先描述商品，系统会自动帮你拼接商业商品摄影 Prompt。",
     "generate": "生成商品图",
     "generating": "生成中...",
     "progress": "进度",
     "preview_title": "生成结果",
-    "preview_description": "任务完成后，专业商品图会显示在这里。",
+    "preview_description": "选好商品和风格，一键生成专业电商商品图",
     "empty_title": "准备生成第一张商品图",
-    "empty_description": "选好风格、背景和构图后，就能生成一张更像真实商业拍摄的电商视觉图。",
+    "empty_description": "选好商品和风格，一键生成专业电商商品图。",
     "download": "下载",
     "buy_credits": "购买积分",
     "credits_cost": "消耗 {credits} 积分",

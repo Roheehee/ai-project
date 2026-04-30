@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "ShipAny 模板二",
-    "description": "ShipAny 是用于构建 AI SaaS 创业项目的 NextJS 脚手架。提供丰富模板和组件，助您快速上线产品。",
-    "keywords": "shipany, shipany-boilerplate, shipany-template-two-demo"
+    "title": "PicShip",
+    "description": "PicShip 帮你输入商品、选择风格与背景，快速生成更像专业商业摄影的电商商品主图。",
+    "keywords": "PicShip, ai商品图, 电商商品图, 商品主图生成, product image ai"
   },
   "sign": {
     "sign_in_title": "登录",

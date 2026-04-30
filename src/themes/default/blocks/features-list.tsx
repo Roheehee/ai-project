@@ -24,13 +24,14 @@ export function FeaturesList({
       )}
     >
       <div className="container overflow-x-hidden">
-        <div className="flex flex-wrap items-center gap-8 pb-12 md:gap-24">
+        <div className="rounded-[2rem] border border-border/70 bg-background/80 p-6 shadow-lg shadow-orange-100/40 backdrop-blur-sm md:p-10">
+          <div className="flex flex-wrap items-center gap-8 pb-12 md:gap-24">
           <ScrollAnimation direction="left">
             <div className="mx-auto w-full max-w-[500px] flex-shrink-0 md:mx-0">
               <LazyImage
                 src={section.image?.src ?? ''}
                 alt={section.image?.alt ?? ''}
-                className="h-auto w-full rounded-lg object-cover"
+                className="h-auto w-full rounded-2xl object-cover shadow-md"
               />
             </div>
           </ScrollAnimation>
@@ -80,9 +81,12 @@ export function FeaturesList({
 
         <ScrollAnimation delay={0.1}>
           {/* Prevent horizontal scrolling, min-w-0 and break-words */}
-          <div className="relative grid min-w-0 grid-cols-1 gap-x-3 gap-y-6 border-t pt-12 break-words sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+          <div className="relative grid min-w-0 grid-cols-1 gap-4 border-t border-border/70 pt-12 break-words sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {section.items?.map((item, idx) => (
-              <div className="min-w-0 space-y-3 break-words" key={idx}>
+              <div
+                className="min-w-0 space-y-3 rounded-2xl border border-border/60 bg-muted/40 p-5 break-words"
+                key={idx}
+              >
                 <div className="flex min-w-0 items-center gap-2">
                   {item.icon && (
                     <SmartIcon name={item.icon as string} size={16} />
@@ -98,6 +102,7 @@ export function FeaturesList({
             ))}
           </div>
         </ScrollAnimation>
+        </div>
       </div>
     </section>
   );

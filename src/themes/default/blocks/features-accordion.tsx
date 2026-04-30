@@ -42,7 +42,8 @@ export function FeaturesAccordion({
       )}
     >
       {/* add overflow-x-hidden to container */}
-      <div className="container space-y-8 overflow-x-hidden px-2 sm:px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
+      <div className="container overflow-x-hidden px-2 sm:px-6 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
+        <div className="space-y-8 rounded-[2rem] border border-border/70 bg-background/82 p-6 shadow-lg shadow-orange-100/30 backdrop-blur-sm md:space-y-16 md:p-10 lg:space-y-20">
         <ScrollAnimation>
           <div className="mx-auto max-w-4xl text-center text-balance">
             <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
@@ -108,6 +109,7 @@ export function FeaturesAccordion({
               />
             </div>
           </ScrollAnimation>
+        </div>
         </div>
       </div>
     </section>

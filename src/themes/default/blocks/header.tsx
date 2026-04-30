@@ -94,10 +94,10 @@ export function Header({ header }: { header: HeaderType }) {
                   <Link
                     href={item.url || ''}
                     target={item.target || '_self'}
-                    className={`flex flex-row items-center gap-2 px-4 py-1.5 text-sm ${
+                    className={`flex flex-row items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors ${
                       item.is_active || pathname.endsWith(item.url as string)
-                        ? 'bg-muted/40 text-muted-foreground'
-                        : ''
+                        ? 'bg-primary/12 text-foreground'
+                        : 'hover:bg-accent/70'
                     }`}
                   >
                     {item.icon && <SmartIcon name={item.icon as string} />}
@@ -273,7 +273,7 @@ export function Header({ header }: { header: HeaderType }) {
                   aria-label={
                     isMobileMenuOpen == true ? 'Close Menu' : 'Open Menu'
                   }
-                  className="relative z-20 -m-2.5 -mr-3 block cursor-pointer p-2.5 lg:hidden"
+                  className="relative z-20 -m-2.5 -mr-3 block cursor-pointer rounded-full p-2.5 hover:bg-accent/70 lg:hidden"
                 >
                   <Menu className="m-auto size-5 duration-200 in-data-[state=active]:scale-0 in-data-[state=active]:rotate-180 in-data-[state=active]:opacity-0" />
                   <X className="absolute inset-0 m-auto size-5 scale-0 -rotate-180 opacity-0 duration-200 in-data-[state=active]:scale-100 in-data-[state=active]:rotate-0 in-data-[state=active]:opacity-100" />
@@ -298,8 +298,8 @@ export function Header({ header }: { header: HeaderType }) {
                           'focus-visible:ring-ring inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
                           'h-7 px-3 ring-0',
                           button.variant === 'outline'
-                            ? 'bg-background border-primary ring-foreground/10 hover:bg-muted/50 dark:ring-foreground/15 dark:hover:bg-muted/50 border border-transparent shadow-sm ring-1 shadow-black/15 duration-200'
-                            : 'bg-primary text-primary-foreground hover:bg-primary/90 border-[0.5px] border-white/25 shadow-md ring-1 shadow-black/20 ring-(--ring-color) [--ring-color:color-mix(in_oklab,var(--color-foreground)15%,var(--color-primary))]'
+                            ? 'bg-background/90 border-primary/25 ring-foreground/10 hover:bg-accent/60 dark:ring-foreground/15 border shadow-sm ring-1 shadow-black/10 duration-200'
+                            : 'bg-primary text-primary-foreground hover:bg-primary/92 border-[0.5px] border-white/25 shadow-md ring-1 shadow-orange-200/60 ring-(--ring-color) [--ring-color:color-mix(in_oklab,var(--color-primary)35%,white)]'
                         )}
                       >
                         {button.icon && (

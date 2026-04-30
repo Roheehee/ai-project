@@ -108,8 +108,12 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link rel="icon" href={envConfigs.app_favicon} />
-        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href={envConfigs.app_favicon} />
+        <link
+          rel="alternate icon"
+          type="image/svg+xml"
+          href={envConfigs.app_favicon}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* inject locales */}
@@ -148,7 +152,7 @@ export default async function RootLayout({
       </head>
       <body suppressHydrationWarning className="overflow-x-hidden">
         <NextTopLoader
-          color="#6466F1"
+          color="#f59e0b"
           initialPosition={0.08}
           crawlSpeed={200}
           height={3}

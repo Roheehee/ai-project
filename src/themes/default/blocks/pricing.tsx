@@ -388,71 +388,105 @@ export function Pricing({
             const currencies = getCurrenciesFromItem(item);
 
             return (
-              <Card key={idx} className="relative">
+              <Card
+                key={idx}
+                className={cn(
+                  'relative overflow-hidden border-border/70 bg-background/95 shadow-sm transition-all duration-300',
+                  'hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/10',
+                  item.is_featured &&
+                    'border-orange-300 bg-linear-to-b from-orange-50 via-white to-orange-50/80 shadow-lg shadow-orange-500/15'
+                )}
+              >
+                <div
+                  className={cn(
+                    'absolute inset-x-0 top-0 h-1 bg-transparent',
+                    item.is_featured &&
+                      'bg-linear-to-r from-orange-300 via-amber-400 to-orange-500'
+                  )}
+                />
                 {item.label && (
-                  <span className="absolute inset-x-0 -top-3 mx-auto flex h-6 w-fit items-center rounded-full bg-linear-to-br/increasing from-purple-400 to-amber-300 px-3 py-1 text-xs font-medium text-amber-950 ring-1 ring-white/20 ring-offset-1 ring-offset-gray-950/5 ring-inset">
+                  <span className="absolute top-4 right-4 flex h-7 items-center rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-700 ring-1 ring-orange-200">
                     {item.label}
                   </span>
                 )}
 
-                <CardHeader>
-                  <CardTitle className="font-medium">
-                    <h3 className="text-sm font-medium">{item.title}</h3>
-                  </CardTitle>
-
-                  <div className="my-3 flex items-baseline gap-2">
-                    {displayedItem.original_price && (
-                      <span className="text-muted-foreground text-sm line-through">
-                        {displayedItem.original_price}
-                      </span>
-                    )}
-
-                    <div className="my-3 block text-2xl font-semibold">
-                      <span className="text-primary">
-                        {displayedItem.price}
-                      </span>{' '}
-                      {displayedItem.unit ? (
-                        <span className="text-muted-foreground text-sm font-normal">
-                          {displayedItem.unit}
-                        </span>
-                      ) : (
-                        ''
-                      )}
+                <CardHeader className="space-y-5 p-6 md:p-7">
+                  <div className="space-y-3 pr-20">
+                    <div className="text-xs font-semibold tracking-[0.18em] text-orange-500 uppercase">
+                      {displayedItem.plan_name || displayedItem.product_name}
                     </div>
-
-                    {currencies.length > 1 && (
-                      <Select
-                        value={selectedCurrency}
-                        onValueChange={(currency) =>
-                          handleCurrencyChange(item.product_id, currency)
-                        }
-                      >
-                        <SelectTrigger
-                          size="sm"
-                          className="border-muted-foreground/30 bg-background/50 h-6 min-w-[60px] px-2 text-xs"
-                        >
-                          <SelectValue placeholder="Currency" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {currencies.map((currency) => (
-                            <SelectItem
-                              key={currency.currency}
-                              value={currency.currency}
-                              className="text-xs"
-                            >
-                              {currency.currency.toUpperCase()}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    )}
+                    <CardTitle className="font-medium">
+                      <h3 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                        {item.title}
+                      </h3>
+                    </CardTitle>
+                    <CardDescription className="text-sm leading-6">
+                      {item.description}
+                    </CardDescription>
                   </div>
 
-                  <CardDescription className="text-sm">
-                    {item.description}
-                  </CardDescription>
+                  <div
+                    className={cn(
+                      'rounded-2xl border p-4',
+                      item.is_featured
+                        ? 'border-orange-200 bg-white/90 shadow-sm'
+                        : 'border-border/60 bg-muted/25'
+                    )}
+                  >
+                    <div className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
+                      方案价格
+                    </div>
+                    <div className="flex items-end gap-2">
+                      <div className="block text-3xl font-semibold md:text-4xl">
+                        <span className="text-primary">
+                          {displayedItem.price}
+                        </span>
+                      </div>
+                      {displayedItem.unit ? (
+                        <span className="pb-1 text-sm font-medium text-muted-foreground">
+                          {displayedItem.unit}
+                        </span>
+                      ) : null}
+                    </div>
+
+                    <div className="mt-2 flex items-center gap-3">
+                      {displayedItem.original_price && (
+                        <span className="text-sm text-muted-foreground line-through">
+                          {displayedItem.original_price}
+                        </span>
+                      )}
+
+                      {currencies.length > 1 && (
+                        <Select
+                          value={selectedCurrency}
+                          onValueChange={(currency) =>
+                            handleCurrencyChange(item.product_id, currency)
+                          }
+                        >
+                          <SelectTrigger
+                            size="sm"
+                            className="border-muted-foreground/30 bg-background/80 h-7 min-w-[70px] px-2 text-xs"
+                          >
+                            <SelectValue placeholder="Currency" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {currencies.map((currency) => (
+                              <SelectItem
+                                key={currency.currency}
+                                value={currency.currency}
+                                className="text-xs"
+                              >
+                                {currency.currency.toUpperCase()}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      )}
+                    </div>
+                  </div>
+
                   {item.tip && (
-                    <span className="text-muted-foreground text-sm">
+                    <span className="rounded-xl bg-orange-50 px-3 py-2 text-sm text-orange-700">
                       {item.tip}
                     </span>
                   )}
@@ -473,8 +507,10 @@ export function Pricing({
                       disabled={isLoading}
                       className={cn(
                         'focus-visible:ring-ring inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
-                        'mt-4 h-9 w-full px-4 py-2',
-                        'bg-primary text-primary-foreground hover:bg-primary/90 border-[0.5px] border-white/25 shadow-md shadow-black/20'
+                        'mt-2 h-11 w-full rounded-xl px-4 py-2',
+                        item.is_featured
+                          ? 'bg-orange-500 text-white hover:bg-orange-500/90 border-[0.5px] border-orange-300 shadow-md shadow-orange-500/20'
+                          : 'bg-primary text-primary-foreground hover:bg-primary/90 border-[0.5px] border-white/25 shadow-md shadow-black/10'
                       )}
                     >
                       {isLoading && item.product_id === productId ? (
@@ -497,17 +533,21 @@ export function Pricing({
                   )}
                 </CardHeader>
 
-                <CardContent className="space-y-4">
-                  <hr className="border-dashed" />
+                <CardContent className="space-y-4 px-6 pb-7 md:px-7">
+                  <hr className="border-dashed border-orange-100" />
 
                   {item.features_title && (
-                    <p className="text-sm font-medium">{item.features_title}</p>
+                    <p className="text-sm font-semibold text-foreground">
+                      {item.features_title}
+                    </p>
                   )}
                   <ul className="list-outside space-y-3 text-sm">
                     {item.features?.map((item, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <Check className="size-3" />
-                        {item}
+                      <li key={index} className="flex items-start gap-3 leading-6">
+                        <span className="mt-1.5 rounded-full bg-orange-100 p-1 text-orange-600">
+                          <Check className="size-3" />
+                        </span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>

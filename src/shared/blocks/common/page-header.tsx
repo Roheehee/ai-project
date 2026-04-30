@@ -24,11 +24,12 @@ export function PageHeader({
   return (
     <section className={cn('py-16 md:py-32', className)}>
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mx-auto max-w-4xl space-y-6 text-center">
+        <div className="mx-auto max-w-4xl rounded-[2rem] border border-border/70 bg-background/82 px-6 py-10 text-center shadow-lg shadow-orange-100/30 backdrop-blur-sm md:px-10 md:py-14">
+          <div className="space-y-6">
           <h1 className="text-center text-4xl font-semibold lg:text-5xl">
             {title}
           </h1>
-          <p>{description}</p>
+          <p className="text-muted-foreground mx-auto max-w-2xl">{description}</p>
           <div className="flex justify-center">
             {buttons?.map((button, idx) => (
               <Button key={idx} {...button} asChild>
@@ -38,6 +39,7 @@ export function PageHeader({
                 </Link>
               </Button>
             ))}
+          </div>
           </div>
         </div>
       </div>

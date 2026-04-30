@@ -14,7 +14,7 @@ export function Footer({ footer }: { footer: FooterType }) {
   return (
     <footer
       id={footer.id}
-      className={`py-8 sm:py-8 ${footer.className || ''} overflow-x-hidden`}
+      className={`overflow-x-hidden border-t border-border/70 bg-background/78 py-8 backdrop-blur-sm sm:py-8 ${footer.className || ''}`}
       // overflow-x-hidden防止-footer-撑出水平滚动条
     >
       <div className="container space-y-8 overflow-x-hidden">

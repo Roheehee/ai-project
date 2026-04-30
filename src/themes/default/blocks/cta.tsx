@@ -20,7 +20,7 @@ export function Cta({
       className={cn('py-16 md:py-24', section.className, className)}
     >
       <div className="container">
-        <div className="text-center">
+        <div className="rounded-[2rem] border border-border/70 bg-[linear-gradient(135deg,color-mix(in_oklab,var(--color-primary)_14%,white),color-mix(in_oklab,var(--color-secondary)_65%,white))] px-6 py-12 text-center shadow-xl shadow-orange-100/50 md:px-10 md:py-16">
           <ScrollAnimation>
             <h2 className="text-4xl font-semibold text-balance lg:text-5xl">
               {section.title}
@@ -28,7 +28,7 @@ export function Cta({
           </ScrollAnimation>
           <ScrollAnimation delay={0.15}>
             <p
-              className="mt-4"
+              className="text-foreground/80 mx-auto mt-4 max-w-2xl"
               dangerouslySetInnerHTML={{ __html: section.description ?? '' }}
             />
           </ScrollAnimation>

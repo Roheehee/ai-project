@@ -6,8 +6,8 @@ import {
   Loader2,
   Package2,
   Sparkles,
-  WandSparkles,
 } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
@@ -291,6 +291,7 @@ export function ProductImageGenerator({
   srOnlyTitle,
 }: ProductImageGeneratorProps) {
   const t = useTranslations('ai.product_image.generator');
+  const searchParams = useSearchParams();
   const [product, setProduct] = useState('');
   const [details, setDetails] = useState('');
   const [brandColor, setBrandColor] = useState('');
@@ -327,6 +328,63 @@ export function ProductImageGenerator({
     SHOT_OPTIONS.find((item) => item.id === shot) || SHOT_OPTIONS[0];
   const selectedLighting =
     LIGHT_OPTIONS.find((item) => item.id === lighting) || LIGHT_OPTIONS[0];
+
+  useEffect(() => {
+    const initialProduct = searchParams.get('product');
+    const initialDetails = searchParams.get('details');
+    const initialBrandColor = searchParams.get('brandColor');
+    const initialStyle = searchParams.get('style');
+    const initialBackground = searchParams.get('background');
+    const initialShot = searchParams.get('shot');
+    const initialLighting = searchParams.get('lighting');
+    const initialRatio = searchParams.get('ratio');
+    const initialQuality = searchParams.get('quality');
+    const initialThinking = searchParams.get('thinking');
+
+    if (initialProduct) setProduct(initialProduct);
+    if (initialDetails) setDetails(initialDetails);
+    if (initialBrandColor) setBrandColor(initialBrandColor);
+    if (initialStyle && STYLE_OPTIONS.some((item) => item.id === initialStyle)) {
+      setStyle(initialStyle);
+    }
+    if (
+      initialBackground &&
+      BACKGROUND_OPTIONS.some((item) => item.id === initialBackground)
+    ) {
+      setBackground(initialBackground);
+    }
+    if (initialShot && SHOT_OPTIONS.some((item) => item.id === initialShot)) {
+      setShot(initialShot);
+    }
+    if (
+      initialLighting &&
+      LIGHT_OPTIONS.some((item) => item.id === initialLighting)
+    ) {
+      setLighting(initialLighting);
+    }
+    if (
+      initialRatio &&
+      RATIO_OPTIONS.includes(initialRatio as (typeof RATIO_OPTIONS)[number])
+    ) {
+      setRatio(initialRatio as (typeof RATIO_OPTIONS)[number]);
+    }
+    if (
+      initialQuality &&
+      QUALITY_OPTIONS.includes(
+        initialQuality as (typeof QUALITY_OPTIONS)[number]
+      )
+    ) {
+      setQuality(initialQuality as (typeof QUALITY_OPTIONS)[number]);
+    }
+    if (
+      initialThinking &&
+      THINKING_OPTIONS.includes(
+        initialThinking as (typeof THINKING_OPTIONS)[number]
+      )
+    ) {
+      setThinkingLevel(initialThinking as (typeof THINKING_OPTIONS)[number]);
+    }
+  }, [searchParams]);
 
   const composedPrompt = buildPrompt({
     product: product.trim(),
@@ -540,7 +598,6 @@ export function ProductImageGenerator({
                     <Sparkles className="size-3.5" />
                     {t('badge')}
                   </Badge>
-                  <Badge variant="outline">{MODEL}</Badge>
                 </div>
                 <CardTitle className="mt-3 flex items-center gap-2 text-2xl">
                   <Package2 className="size-5" />
@@ -578,9 +635,6 @@ export function ProductImageGenerator({
                       onChange={(event) => setBrandColor(event.target.value)}
                       placeholder={t('fields.brand_color_placeholder')}
                     />
-                    <div className="rounded-lg border border-dashed p-4 text-sm text-muted-foreground">
-                      {t('fields.tip')}
-                    </div>
                   </div>
                 </div>
 
@@ -682,16 +736,6 @@ export function ProductImageGenerator({
                       </SelectContent>
                     </Select>
                   </div>
-                </div>
-
-                <div className="rounded-xl border bg-muted/30 p-4">
-                  <div className="mb-2 flex items-center gap-2 text-sm font-medium">
-                    <WandSparkles className="size-4" />
-                    {t('prompt_preview')}
-                  </div>
-                  <p className="text-sm leading-6 text-muted-foreground">
-                    {composedPrompt || t('empty_prompt')}
-                  </p>
                 </div>
 
                 <div className="flex flex-col gap-4 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">

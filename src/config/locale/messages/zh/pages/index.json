@@ -2,31 +2,24 @@
   "page": {
     "show_sections": [
       "hero",
-      "logos",
       "introduce",
       "benefits",
       "usage",
       "features",
-      "stats",
-      "testimonials",
       "faq",
       "cta"
     ],
     "sections": {
       "hero": {
         "id": "hero",
-        "title": "一小时快速上线你的 AI 创业项目",
-        "highlight_text": "一小时",
-        "description": "ShipAny 是用于构建 AI SaaS 创业项目的 NextJS 项目模板。<br/>集成常用功能，快速上线你的产品。",
-        "announcement": {
-          "badge": "全新",
-          "title": "🎉 ShipAny 模板二已发布",
-          "url": "/pricing"
-        },
-        "tip": "🎁 前 1000 名用户特价优惠",
+        "title": "一键生成专业感商品主图",
+        "highlight_text": "专业感",
+        "description": "输入你想卖的商品，选择风格、背景与光线，快速生成更像专业商业摄影的电商商品图。<br/>适用于独立站、亚马逊、TikTok Shop、详情页首图与广告投放素材。",
+        "announcement": null,
+        "tip": "",
         "buttons": [
           {
-            "title": "生成电商商品图",
+            "title": "立即生成商品图",
             "icon": "Sparkles",
             "url": "/ai-product-image-generator",
             "target": "_self",
@@ -40,27 +33,93 @@
             "variant": "outline"
           },
           {
-            "title": "阅读文档",
+            "title": "进入工作台",
             "icon": "BookOpenText",
-            "url": "/docs",
-            "target": "_blank",
+            "url": "/ai-product-image-generator",
+            "target": "_self",
             "variant": "outline"
           }
         ],
-        "show_avatars": true,
-        "avatars_tip": "999+ 用户在使用 ShipAny 上站",
+        "show_avatars": false,
+        "avatars_tip": "适合品牌方、运营、设计师与独立站卖家快速出图",
         "show_award": false,
-        "image": {
-          "src": "/imgs/features/admin.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
-        },
-        "image_invert": {
-          "src": "/imgs/features/admin-dark.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
+        "entry_panel": {
+          "badge": "",
+          "title": "先试一张商品图方向",
+          "description": "这里先选商品、风格和背景，点击后会带着你的选择进入完整生成器。",
+          "placeholder": "例如：防晒喷雾、咖啡豆、蓝牙耳机、香薰蜡烛",
+          "default_product": "玻尿酸精华液",
+          "submit_label": "进入完整商品图工作台",
+          "examples_label": "热门测试商品",
+          "examples": [
+            "玻尿酸精华液",
+            "冷萃咖啡豆",
+            "真无线蓝牙耳机",
+            "宠物除味喷雾"
+          ],
+          "style_label": "想要的视觉风格",
+          "styles": [
+            {
+              "value": "clean",
+              "label": "极简电商"
+            },
+            {
+              "value": "luxury",
+              "label": "高端广告"
+            },
+            {
+              "value": "organic",
+              "label": "自然生活感"
+            },
+            {
+              "value": "tech",
+              "label": "科技发布感"
+            }
+          ],
+          "background_label": "背景氛围",
+          "backgrounds": [
+            {
+              "value": "white",
+              "label": "纯白主图"
+            },
+            {
+              "value": "gradient",
+              "label": "品牌渐变"
+            },
+            {
+              "value": "marble",
+              "label": "高端台面"
+            },
+            {
+              "value": "botanical",
+              "label": "自然场景"
+            }
+          ],
+          "ratio_label": "出图比例",
+          "ratios": [
+            {
+              "value": "1:1",
+              "label": "1:1"
+            },
+            {
+              "value": "4:5",
+              "label": "4:5"
+            },
+            {
+              "value": "3:4",
+              "label": "3:4"
+            },
+            {
+              "value": "16:9",
+              "label": "16:9"
+            }
+          ],
+          "bullets": [
+            "风格、背景、镜头和光线都已预设，适合快速试方向",
+            "进入完整工作台后可继续补充卖点、品牌色与更多控制项",
+            "从首页就能开始筛选方向，少走很多试错弯路"
+          ],
+          "note": "提示：这里是轻量入口，真正生成和下载在完整商品图工作台中完成。"
         },
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
@@ -68,7 +127,7 @@
         }
       },
       "logos": {
-        "title": "ShipAny 使用以下技术栈构建",
+        "title": "覆盖完整商品图工作流",
         "items": [
           {
             "title": "Next.js",
@@ -110,45 +169,45 @@
       "introduce": {
         "block": "features-list",
         "id": "introduce",
-        "title": "ShipAny 是什么？",
-        "label": "产品简介",
-        "description": "ShipAny 是专为 AI SaaS 创业项目打造的 NextJS 脚手架，包括丰富模板、组件及文档。",
+        "title": "它不是泛图像生成器，而是为商品图成交场景设计的工具",
+        "label": "产品定位",
+        "description": "我们把商品摄影里最常见、最费时间的决策项拆成可选控件，让非设计师也能更稳定地生成像样的电商视觉。",
         "image": {
-          "src": "/imgs/features/landing-page.png",
+          "src": "/imgs/features/luxury-showcase-grid.svg",
           "alt": "introduce"
         },
         "items": [
           {
-            "title": "开箱即用的模板",
-            "description": "从数十款生产级 AI SaaS 模板中选择，快速开启你的项目。",
-            "icon": "RiNextjsFill",
+            "title": "以商品卖点为核心，而不是复杂设置为核心",
+            "description": "用户先输入卖什么，再选风格、背景、光线和视角，流程更贴近真实电商出图。",
+            "icon": "Package2",
             "image": {
               "src": "/imgs/features/1.png",
               "alt": "introduce"
             }
           },
           {
-            "title": "基础设施搭建",
-            "description": "内置最佳实践，即刻拥有可扩展的基础设施。",
-            "icon": "RiDatabase2Line",
+            "title": "更贴近商业摄影的画面控制",
+            "description": "默认会强化材质、边缘、阴影、产品准确性与商业修图质感，减少画面失真和不自然的问题。",
+            "icon": "Sparkles",
             "image": {
               "src": "/imgs/features/2.png",
               "alt": "introduce"
             }
           },
           {
-            "title": "极速部署",
-            "description": "AI SaaS 产品快速上线，助力小时级交付。",
-            "icon": "RiCloudyFill",
+            "title": "一张图服务多种电商渠道",
+            "description": "可用于独立站首屏、商品详情页、平台主图、广告素材和活动专题头图。",
+            "icon": "RiImageCircleLine",
             "image": {
               "src": "/imgs/features/3.png",
               "alt": "introduce"
             }
           },
           {
-            "title": "AI 集成",
-            "description": "通过内置的 AI SDK，轻松为你的项目集成 AI 能力。",
-            "icon": "RiRobot2Line",
+            "title": "先快速试方向，再进入完整工作台",
+            "description": "首页入口先帮你确定大方向，进入后还能继续补充商品卖点、品牌色、构图和出图细节。",
+            "icon": "RiSettings4Line",
             "image": {
               "src": "/imgs/features/4.png",
               "alt": "introduce"
@@ -160,34 +219,34 @@
       "benefits": {
         "block": "features-accordion",
         "id": "benefits",
-        "title": "为何选择 ShipAny",
-        "label": "产品优势",
-        "description": "你获得一切 AI 创业所需——从开箱即用的模板到专业技术支持。",
+        "title": "为什么这个流程更适合做商品图",
+        "label": "核心优势",
+        "description": "商品图真正难的不是“会不会生成”，而是能不能稳定产出适合卖货的视觉。首页到工作台的链路就是围绕这个问题设计的。",
         "items": [
           {
-            "title": "全栈解决方案",
-            "description": "基于 Next.js，集成认证、支付、AI，一站式开箱即用。",
-            "icon": "RiNextjsFill",
+            "title": "预设是带经营场景的",
+            "description": "不是抽象的艺术风格，而是围绕白底主图、高端广告、自然生活感、科技发布感等常见商业风格预设。",
+            "icon": "RiSlideshowLine",
             "image": {
-              "src": "/imgs/features/user-billing.png",
+              "src": "/imgs/features/product-controls.svg",
               "alt": "benefits"
             }
           },
           {
-            "title": "丰富模板库",
-            "description": "多样的 AI SaaS 模板，点击即用，涵盖聊天、图像生成等多场景。",
-            "icon": "RiClapperboardAiLine",
+            "title": "背景和光线能直接影响转化感受",
+            "description": "同一商品换不同背景与打光，用户对品牌调性、价格带和真实感的判断会完全不同，所以这些被放进了核心控制项。",
+            "icon": "RiSunFoggyLine",
             "image": {
-              "src": "/imgs/features/admin-settings.png",
+              "src": "/imgs/features/product-scene.svg",
               "alt": "benefits"
             }
           },
           {
-            "title": "专属技术指导",
-            "description": "享受专属技术支持与开发者社区，为你的成功保驾护航。",
-            "icon": "RiCodeFill",
+            "title": "从首页开始就少走弯路",
+            "description": "首页入口不是装饰区，而是第一步筛选器。先定商品图方向，再进入完整工作流，能明显缩短试错时间。",
+            "icon": "RiRouteLine",
             "image": {
-              "src": "/imgs/features/landing-page.png",
+              "src": "/imgs/features/product-workspace.svg",
               "alt": "benefits"
             }
           }
@@ -196,8 +255,8 @@
       "usage": {
         "block": "features-step",
         "id": "usage",
-        "title": "三步使用 ShipAny 极速上线",
-        "description": "只需三步，快速开启你的 AI SaaS 创业之路：",
+        "title": "三步做出第一张能卖货的商品图",
+        "description": "从首页到完整工作台，路径尽量压缩成简单、可重复的出图流程：",
         "image": {
           "src": "/imgs/features/1.png",
           "alt": "usage"
@@ -206,32 +265,32 @@
         "text_align": "center",
         "items": [
           {
-            "title": "获取 ShipAny",
-            "description": "一次性购买 ShipAny，查收邮件获取代码与文档。",
+            "title": "输入你要卖的商品",
+            "description": "先明确产品对象，例如精华液、蓝牙耳机、咖啡豆或宠物清洁喷雾，系统会围绕这个商品组织主图语言。",
             "image": {
               "src": "/imgs/features/5.png",
               "alt": "usage"
             }
           },
           {
-            "title": "启动你的项目",
-            "description": "阅读说明文档，克隆 ShipAny 代码，开始开发你的 AI SaaS 项目。",
+            "title": "选择想要的商业视觉方向",
+            "description": "在首页先挑风格、背景和比例；进入工作台后，还能补充品牌色、镜头角度、光线与商品细节。",
             "image": {
               "src": "/imgs/features/6.png",
               "alt": "usage"
             }
           },
           {
-            "title": "个性化定制",
-            "description": "根据需求修改模板内容和数据，配置专属 AI 能力。",
+            "title": "生成并筛选更适合投放的画面",
+            "description": "查看生成结果，挑出最适合作为商品首图、详情页重点图或广告素材的一张。",
             "image": {
               "src": "/imgs/features/7.png",
               "alt": "usage"
             }
           },
           {
-            "title": "部署上线",
-            "description": "简单几步将你的项目推向生产环境，立刻为客户提供服务。",
+            "title": "迭代到你真正想卖的感觉",
+            "description": "如果品牌调性不够准，就继续切换风格、场景与光线，快速试出更匹配的成交氛围。",
             "image": {
               "src": "/imgs/features/8.png",
               "alt": "usage"
@@ -242,50 +301,50 @@
       },
       "features": {
         "id": "features",
-        "title": "ShipAny 核心功能",
-        "description": "一切你需要的工具，助力 AI SaaS 项目高效上线。",
+        "title": "你可以直接控制这些关键项",
+        "description": "不是堆很多专业名词，而是把对商品图最有影响的维度直接交给你控制。",
         "items": [
           {
-            "title": "Next.js 项目模板",
-            "description": "生产就绪、支持 SEO 与多语言的 Next.js 脚手架。",
-            "icon": "RiNextjsFill"
+            "title": "商品输入",
+            "description": "从卖什么开始，决定整张画面的主体、包装结构与场景表达。",
+            "icon": "Package2"
           },
           {
-            "title": "身份认证与支付",
-            "description": "集成谷歌 OAuth、一键登录，以及 Stripe 支付。",
-            "icon": "RiKey2Fill"
+            "title": "风格预设",
+            "description": "极简电商、高端广告、自然生活感、科技发布感、美妆广告感等方向快速切换。",
+            "icon": "Palette"
           },
           {
-            "title": "数据基础设施",
-            "description": "内置 Supabase，稳定可靠的数据存储。",
-            "icon": "RiDatabase2Line"
+            "title": "背景预设",
+            "description": "白底、渐变、石材台面、自然场景、厨房、梳妆台、亚克力反射等氛围可选。",
+            "icon": "ImageIcon"
           },
           {
-            "title": "一键部署",
-            "description": "自动化部署到 Vercel 或 Cloudflare，极速上线。",
-            "icon": "RiCloudy2Fill"
+            "title": "镜头与构图",
+            "description": "正面主图、三分之四角度、俯拍、悬浮和微距细节，适配不同卖点表达。",
+            "icon": "Camera"
           },
           {
-            "title": "商业分析",
-            "description": "集成 Google Analytics、Search Console，助力业务增长。",
-            "icon": "RiBarChart2Line"
+            "title": "光线控制",
+            "description": "柔光棚拍、自然日光、戏剧化聚光、发光感和目录式平衡打光都已预设。",
+            "icon": "Sun"
           },
           {
-            "title": "AI 原生基础设施",
-            "description": "预置 AI 集成、积分系统和 API 售卖能力。",
-            "icon": "RiRobot2Line"
+            "title": "比例与质量",
+            "description": "方图、竖图、详情页比例与不同清晰度选择，方便适配多渠道素材尺寸。",
+            "icon": "Crop"
           },
           {
-            "title": "AI 电商商品图生成",
-            "description": "输入商品名称并选择风格、背景、光线，即可生成更像专业商业摄影的电商主图。",
+            "title": "一键生成商品图",
+            "description": "出图后可直接预览和下载，适合连续测试多个商品方向。",
             "icon": "Sparkles"
           }
         ]
       },
       "stats": {
         "id": "stats",
-        "title": "用户喜爱 ShipAny",
-        "description": "因其易用且上线飞快。",
+        "title": "用户喜欢更快的商品图工作流",
+        "description": "因为它更直接、更容易进入状态。",
         "items": [
           {
             "title": "999+",
@@ -304,13 +363,13 @@
       },
       "testimonials": {
         "id": "testimonials",
-        "title": "用户对 ShipAny 的评价",
-        "description": "听听开发者与创始人用 ShipAny 快速上线 AI 创业项目的故事。",
+        "title": "用户怎么评价这个工作流",
+        "description": "这里展示的是典型的使用感受与结果预期。",
         "items": [
           {
             "name": "David Chen",
             "role": "AIWallpaper.shop 创始人",
-            "quote": "ShipAny 为我们节省了数月开发时间。2 天上线 AI 壁纸业务，一周内就收到了第一笔付费订单！",
+            "quote": "以前做一张像样的商品图要来回沟通很多轮，现在先在工作台里试方向，效率高了非常多。",
             "image": {
               "src": "/imgs/avatars/1.png",
               "alt": "david"
@@ -319,7 +378,7 @@
           {
             "name": "Rachel Kim",
             "role": "HeyBeauty.ai CTO",
-            "quote": "内置 AI 基础设施颠覆了开发体验，无需担心架构，只需专注核心功能，极快落地。",
+            "quote": "最明显的变化是出图链路更顺了，团队不需要反复解释需求，也能更快统一方向。",
             "image": {
               "src": "/imgs/avatars/2.png",
               "alt": "rachel"
@@ -328,7 +387,7 @@
           {
             "name": "Marcus Thompson",
             "role": "独立开发者",
-            "quote": "作为独立开发者，ShipAny 满足了全部需求——认证、支付、AI 集成、美观界面，一个周末上线 SaaS！",
+            "quote": "风格、背景和光线都能直接切换，对运营和设计协作特别友好，能很快统一想要的视觉感觉。",
             "image": {
               "src": "/imgs/avatars/3.png",
               "alt": "marcus"
@@ -337,7 +396,7 @@
           {
             "name": "Sofia Garcia",
             "role": "Melodisco CEO",
-            "quote": "模板高度可定制且生产级。我们几小时内搭建出了 AI 音乐平台，上市周期大大缩短！",
+            "quote": "最实用的是它把商品图决策拆得很清楚，运营和设计能更快达成一致，出图效率明显提升。",
             "image": {
               "src": "/imgs/avatars/4.png",
               "alt": "sofia"
@@ -346,7 +405,7 @@
           {
             "name": "James Wilson",
             "role": "GPTs.works 技术负责人",
-            "quote": "ShipAny 基础设施极其稳定。我们从 0 到 1 万用户，无需关心后端维护，是最棒的 AI 创业投资。",
+            "quote": "最有价值的是它不是盲目出图，而是更贴近商业摄影的工作方式，结果更容易拿去真正使用。",
             "image": {
               "src": "/imgs/avatars/5.png",
               "alt": "james"
@@ -355,7 +414,7 @@
           {
             "name": "Anna Zhang",
             "role": "创业者",
-            "quote": "从想法到上线，仅用 3 天！ShipAny 模板和部署工具让我们极快验证 AI 商业创意。",
+            "quote": "首页就能直接进入生成流程，少了很多解释成本，新成员也能很快上手。 ",
             "image": {
               "src": "/imgs/avatars/6.png",
               "alt": "anna"
@@ -365,52 +424,52 @@
       },
       "faq": {
         "id": "faq",
-        "title": "关于 ShipAny 的常见问题",
-        "description": "还有其他问题？欢迎加入 Discord 或发邮件联系我们。",
+        "title": "关于商品图工作台的常见问题",
+        "description": "这里先回答最常见的使用疑问，帮助你更快判断它适不适合你的业务。",
         "items": [
           {
-            "question": "ShipAny 是什么？怎么帮到我？",
-            "answer": "ShipAny 是专为 AI SaaS 创业设计的 NextJS 全套脚手架，内含开箱即用的模板、基础设施搭建和部署工具，让你数小时内上线 AI 产品。"
+            "question": "这个功能最适合哪些人用？",
+            "answer": "最适合独立站卖家、电商运营、品牌团队、广告投手和需要快速出商品主图的人。尤其适合还没有稳定摄影资源、但又想先把商品视觉做起来的团队。"
           },
           {
-            "question": "使用 ShipAny 需要很高的技术水平吗？",
-            "answer": "有基础编程知识即可上手。ShipAny 面向开发者友好，详细文档和模板让初学者也能轻松起步，不需深厚 AI 或云计算背景。"
+            "question": "它和普通文生图工具有什么区别？",
+            "answer": "区别在于整个流程都围绕商品图成交场景设计，不是单纯追求“好看”，而是更重视产品准确性、商业摄影感和电商适用度。"
           },
           {
-            "question": "ShipAny 支持哪些类型的 AI SaaS 项目？",
-            "answer": "ShipAny 支持内容生成、数据分析、AI 聊天机器人、图片/内容生成器等多种主流 AI 应用场景。"
+            "question": "首页入口和完整工作台有什么差别？",
+            "answer": "首页入口用来帮你先确定商品图方向；完整工作台提供更完整的商品细节、品牌色、背景、镜头、光线和参数控制，用来真正生成和下载图片。"
           },
           {
-            "question": "用 ShipAny 一般多久能上线？",
-            "answer": "借助 ShipAny，可在数小时内拿到产品原型并上线生产环境，预配置的一键部署大幅缩短开发周期。"
+            "question": "能不能做白底图和更偏广告感的图？",
+            "answer": "可以。当前已经提供白底主图、品牌渐变、高端台面、自然场景等背景，以及极简电商、高端广告、自然生活感、科技发布感等风格方向。"
           },
           {
-            "question": "ShipAny 的基础设施包括哪些内容？",
-            "answer": "包含认证、数据库、API 集成、支付、云端部署等全栈解决方案，全部遵循业界最佳实践预配置。"
+            "question": "生成后的图适合拿去哪些地方用？",
+            "answer": "适合商品详情页、独立站首页、亚马逊或 TikTok Shop 商品首图、活动专题页以及广告投放素材。不同渠道可以用不同尺寸和风格来适配。"
           },
           {
-            "question": "模板是否支持定制自己的品牌？",
-            "answer": "当然支持！所有模板均可自定义设计、功能和品牌，既保持基础架构稳定，又能满足个性扩展需求。"
+            "question": "如果第一张结果不满意怎么办？",
+            "answer": "最有效的做法通常不是完全重来，而是继续调整风格、背景、镜头或品牌色。这个产品的设计目标就是帮助你快速迭代出更接近真实商业需求的方向。"
           }
         ]
       },
       "cta": {
         "id": "cta",
-        "title": "发布你的第一个 AI SaaS 项目",
-        "description": "从这里出发，用 ShipAny 极速交付。",
+        "title": "从首页直接开始，做出你的第一张商品主图",
+        "description": "如果你已经知道要卖什么，现在就进入完整工作台，把方向变成真正的成品图。",
         "buttons": [
           {
-            "title": "获取 ShipAny",
-            "url": "https://shipany.ai",
-            "target": "_blank",
-            "icon": "Zap"
+            "title": "进入商品图工作台",
+            "url": "/ai-product-image-generator",
+            "target": "_self",
+            "icon": "Sparkles"
           },
           {
-            "title": "阅读文档",
-            "url": "/docs",
-            "target": "_blank",
+            "title": "查看价格",
+            "url": "/pricing",
+            "target": "_self",
             "variant": "outline",
-            "icon": "BookOpenText"
+            "icon": "Zap"
           }
         ],
         "className": "bg-muted"
@@ -418,7 +477,7 @@
       "subscribe": {
         "id": "subscribe",
         "title": "订阅我们的邮件通知",
-        "description": "获取 ShipAny 最新资讯与产品动态。",
+        "description": "获取最新的产品动态与功能更新。",
         "submit": {
           "input": {
             "placeholder": "输入邮箱"

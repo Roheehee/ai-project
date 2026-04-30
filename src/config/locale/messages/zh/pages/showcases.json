@@ -1,148 +1,397 @@
 {
   "metadata": {
-    "title": "案例展示",
-    "description": "用 ShipAny 打造的精彩项目"
+    "title": "案例灵感",
+    "description": "按风格浏览 AI 商品图案例，快速找到更适合你商品的视觉方向"
   },
   "page": {
-    "title": "案例展示",
+    "title": "案例灵感",
     "sections": {
       "showcases": {
         "id": "showcases",
-        "title": "用 ShipAny 构建的 AI SaaS 创业项目",
-        "description": "简单、快速、高效。",
+        "title": "按风格查看商品图案例",
+        "description": "这些案例图都按首页主打风格生成，帮助你更快判断你的商品适合哪种视觉方向。",
         "groups": [
           {
             "name": "all",
-            "title": "所有项目"
+            "title": "全部"
           },
           {
-            "name": "ai-chatbot",
-            "title": "AI 聊天机器人"
+            "name": "clean",
+            "title": "极简电商"
           },
           {
-            "name": "ai-image",
-            "title": "AI 图片"
+            "name": "luxury",
+            "title": "高端广告"
           },
           {
-            "name": "ai-video",
-            "title": "AI 视频"
+            "name": "organic",
+            "title": "自然生活感"
           },
           {
-            "name": "ai-audio",
-            "title": "AI 音频"
-          },
-          {
-            "name": "ai-music",
-            "title": "AI 音乐"
-          },
-          {
-            "name": "ai-coding",
-            "title": "AI 编程"
-          },
-          {
-            "name": "other",
-            "title": "其他"
+            "name": "tech",
+            "title": "科技发布感"
           }
         ],
         "items": [
           {
-            "title": "ThinkAny",
-            "description": "AI 搜索引擎",
-            "url": "https://thinkany.ai",
-            "target": "_blank",
+            "title": "玻尿酸精华液白底主图",
+            "description": "适合独立站首屏、平台白底主图和详情页第一屏。重点是产品主体清晰、阴影干净、整体更像目录式商业拍摄。",
             "image": {
-              "src": "/imgs/cases/7.png",
+              "src": "/imgs/cases/generated/clean-packshot.png",
               "alt": "案例展示"
             },
-            "group": "ai-chatbot"
+            "group": "clean",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E7%8E%BB%E5%B0%BF%E9%85%B8%E7%B2%BE%E5%8D%8E%E6%B6%B2&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "HeyBeauty",
-            "description": "AI 虚拟试妆",
-            "url": "https://heybeauty.ai",
-            "target": "_blank",
+            "title": "防晒喷雾白底主图",
+            "description": "更适合夏季护理、快消和上新活动页，整体保持纯净、轻快和平台友好。",
             "image": {
-              "src": "/imgs/cases/5.png",
-              "alt": "案例展示"
+              "src": "/imgs/cases/generated/clean-sunscreen.png",
+              "alt": "极简电商案例"
             },
-            "group": "ai-image"
+            "group": "clean",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E9%98%B2%E6%99%92%E5%96%B7%E9%9B%BE&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "AI Wallpaper",
-            "description": "AI 壁纸生成器",
-            "url": "https://aiwallpaper.shop",
-            "target": "_blank",
+            "title": "冷萃咖啡豆包装主图",
+            "description": "适合食品、饮品和包装展示类商品，重点突出包装形体和上架陈列感。",
             "image": {
-              "src": "/imgs/cases/1.png",
-              "alt": "案例展示"
+              "src": "/imgs/cases/generated/clean-coffee-bag.png",
+              "alt": "极简电商案例"
             },
-            "group": "ai-image"
+            "group": "clean",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E5%92%96%E5%95%A1%E8%B1%86&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "AI Cover",
-            "description": "AI 封面生成器",
-            "url": "https://aicover.design",
-            "target": "_blank",
+            "title": "宠物除味喷雾白底图",
+            "description": "适合宠物家清类商品，清楚传达功能属性，也便于电商详情页统一视觉。",
             "image": {
-              "src": "/imgs/cases/2.png",
-              "alt": "案例展示"
+              "src": "/imgs/cases/generated/clean-pet-spray.png",
+              "alt": "极简电商案例"
             },
-            "group": "ai-image"
+            "group": "clean",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E5%AE%A0%E7%89%A9%E9%99%A4%E5%91%B3%E5%96%B7%E9%9B%BE&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "GPTs Works",
-            "description": "GPTs 导航",
-            "url": "https://gpts.works",
-            "target": "_blank",
+            "title": "胶原饮盒装目录主图",
+            "description": "适合营养健康和礼盒型商品，强调结构清晰、正面识别度和商业整洁感。",
             "image": {
-              "src": "/imgs/cases/3.png",
-              "alt": "案例展示"
+              "src": "/imgs/cases/generated/clean-collagen-box.png",
+              "alt": "极简电商案例"
             },
-            "group": "other"
+            "group": "clean",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E8%83%B6%E5%8E%9F%E9%A5%AE&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "Melodisco",
-            "description": "AI 音乐播放器",
-            "url": "https://melodis.co",
-            "target": "_blank",
+            "title": "维生素软糖罐装主图",
+            "description": "适合保健品、补剂和功能食品，整体更偏目录式电商拍摄，稳定易用。",
             "image": {
-              "src": "/imgs/cases/4.png",
-              "alt": "案例展示"
+              "src": "/imgs/cases/generated/clean-vitamin-gummies.png",
+              "alt": "极简电商案例"
             },
-            "group": "ai-music"
+            "group": "clean",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E7%BB%B4%E7%94%9F%E7%B4%A0%E8%BD%AF%E7%B3%96&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "Pagen",
-            "description": "AI 落地页生成器",
-            "url": "https://pagen.so",
-            "target": "_blank",
+            "title": "香水高端广告图",
+            "description": "更偏高级质感和品牌氛围，适合高客单价商品、节日营销页和广告投放素材。",
             "image": {
-              "src": "/imgs/cases/6.png",
+              "src": "/imgs/cases/generated/luxury-perfume.png",
               "alt": "案例展示"
             },
-            "group": "ai-coding"
+            "group": "luxury",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E9%A6%99%E6%B0%B4&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "SoraFM",
-            "description": "AI 视频生成器",
-            "url": "https://sorafm.trys.ai",
-            "target": "_blank",
+            "title": "高端面霜广告图",
+            "description": "适合高客单护肤品与节日礼盒推广，重点是石材台面、金属反光和品牌溢价感。",
             "image": {
-              "src": "/imgs/cases/8.png",
-              "alt": "案例展示"
+              "src": "/imgs/cases/generated/luxury-cream-jar.png",
+              "alt": "高端广告案例"
             },
-            "group": "ai-video"
+            "group": "luxury",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E9%9D%A2%E9%9C%9C&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "PodLM",
-            "description": "AI 播客生成器",
-            "url": "https://podlm.ai",
-            "target": "_blank",
+            "title": "香薰蜡烛高端氛围图",
+            "description": "适合家居香氛和礼赠类商品，整体会更偏空间质感和生活方式审美。",
             "image": {
-              "src": "/imgs/cases/9.png",
+              "src": "/imgs/cases/generated/luxury-candle.png",
+              "alt": "高端广告案例"
+            },
+            "group": "luxury",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E9%A6%99%E8%96%B0%E8%9C%A1%E7%83%9B&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "橄榄油高端陈列图",
+            "description": "适合食品品牌做礼赠、精选系列或专题页封面，整体更像商业广告拍摄。",
+            "image": {
+              "src": "/imgs/cases/generated/luxury-olive-oil.png",
+              "alt": "高端广告案例"
+            },
+            "group": "luxury",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E6%A9%84%E6%A6%84%E6%B2%B9&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "首饰盒高端广告图",
+            "description": "适合珠宝、配饰和礼物类商品，突出高端陈列感和材质反射。",
+            "image": {
+              "src": "/imgs/cases/generated/luxury-jewelry-box.png",
+              "alt": "高端广告案例"
+            },
+            "group": "luxury",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E9%A6%96%E9%A5%B0%E7%9B%92&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "安瓶精华高端主视觉",
+            "description": "适合功效型护肤和高客单产品宣传页，画面更偏品牌营销视觉而不是纯目录图。",
+            "image": {
+              "src": "/imgs/cases/generated/luxury-ampoule.png",
+              "alt": "高端广告案例"
+            },
+            "group": "luxury",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E5%AE%89%E7%93%B6%E7%B2%BE%E5%8D%8E&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "抹茶身体乳自然生活感",
+            "description": "适合护肤、洗护、家清和成分感品牌，画面更柔和，也更容易传达天然与安心感。",
+            "image": {
+              "src": "/imgs/cases/generated/organic-lotion.png",
               "alt": "案例展示"
             },
-            "group": "ai-audio"
+            "group": "organic",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E8%BA%AB%E4%BD%93%E4%B9%B3&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "益生菌饮自然生活感",
+            "description": "适合健康饮品、轻养生品牌和日常补给类商品，整体更清爽、明亮、可信。",
+            "image": {
+              "src": "/imgs/cases/generated/organic-probiotic.png",
+              "alt": "自然生活感案例"
+            },
+            "group": "organic",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E7%9B%8A%E7%94%9F%E8%8F%8C%E9%A5%AE%E6%96%99&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "天然洗发水生活方式图",
+            "description": "适合洗护和植物成分品牌，画面更像自然日光下的真实生活场景。",
+            "image": {
+              "src": "/imgs/cases/generated/organic-shampoo.png",
+              "alt": "自然生活感案例"
+            },
+            "group": "organic",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E6%B4%97%E5%8F%91%E6%B0%B4&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "草本茶罐自然陈列图",
+            "description": "适合茶饮和有机食品品牌，重点是自然氛围、石材纹理和舒缓感。",
+            "image": {
+              "src": "/imgs/cases/generated/organic-tea-tin.png",
+              "alt": "自然生活感案例"
+            },
+            "group": "organic",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E8%8D%89%E6%9C%AC%E8%8C%B6&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "陶瓷洗手液自然场景图",
+            "description": "适合家居洗护和轻生活方式品牌，整体更有自然家居陈列感。",
+            "image": {
+              "src": "/imgs/cases/generated/organic-hand-soap.png",
+              "alt": "自然生活感案例"
+            },
+            "group": "organic",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E6%B4%97%E6%89%8B%E6%B6%B2&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "助眠精油自然氛围图",
+            "description": "适合精油、香氛与睡眠护理品牌，传达柔和、安静和自我照顾的品牌感觉。",
+            "image": {
+              "src": "/imgs/cases/generated/organic-sleep-oil.png",
+              "alt": "自然生活感案例"
+            },
+            "group": "organic",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E5%8A%A9%E7%9C%A0%E7%B2%BE%E6%B2%B9&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "无线耳机科技发布感",
+            "description": "适合 3C、数码配件和偏科技品牌的新品展示，强调轮廓、材质和冷静但高级的发布感。",
+            "image": {
+              "src": "/imgs/cases/generated/tech-earbuds.png",
+              "alt": "案例展示"
+            },
+            "group": "tech",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E6%97%A0%E7%BA%BF%E8%80%B3%E6%9C%BA&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "智能音箱科技发布图",
+            "description": "适合智能家居与音频设备，画面更偏新品发布会式的科技展示。",
+            "image": {
+              "src": "/imgs/cases/generated/tech-smart-speaker.png",
+              "alt": "科技发布感案例"
+            },
+            "group": "tech",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E6%99%BA%E8%83%BD%E9%9F%B3%E7%AE%B1&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "智能手表发布感主视觉",
+            "description": "适合穿戴设备和数码新品宣发，重点强化轮廓和高端工业质感。",
+            "image": {
+              "src": "/imgs/cases/generated/tech-projector.png",
+              "alt": "科技发布感案例"
+            },
+            "group": "tech",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E6%99%BA%E8%83%BD%E6%89%8B%E8%A1%A8&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "便携投影仪科技氛围图",
+            "description": "适合影音设备和新品发售页面，整体更强调光感、材质和未来感空间。",
+            "image": {
+              "src": "/imgs/cases/generated/tech-speaker.png",
+              "alt": "科技发布感案例"
+            },
+            "group": "tech",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E4%BE%BF%E6%90%BA%E6%8A%95%E5%BD%B1%E4%BB%AA&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "头戴耳机科技新品图",
+            "description": "适合音频设备与消费电子品牌，整体更有旗舰新品的舞台感与未来感。",
+            "image": {
+              "src": "/imgs/cases/generated/tech-headphones.png",
+              "alt": "科技发布感案例"
+            },
+            "group": "tech",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E5%A4%B4%E6%88%B4%E8%80%B3%E6%9C%BA&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "移动电源科技发布图",
+            "description": "适合配件、充电设备和数码周边，强调利落轮廓和发布级展示效果。",
+            "image": {
+              "src": "/imgs/cases/generated/tech-powerbank.png",
+              "alt": "科技发布感案例"
+            },
+            "group": "tech",
+            "button": {
+              "title": "用这个风格生成",
+              "url": "/ai-product-image-generator?product=%E7%A7%BB%E5%8A%A8%E7%94%B5%E6%BA%90&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           }
         ]
       }

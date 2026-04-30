@@ -9,6 +9,7 @@ import { cn } from '@/shared/lib/utils';
 import { Section } from '@/shared/types/blocks/landing';
 
 import { SocialAvatars } from './social-avatars';
+import { HeroEntryPanel } from './hero-entry-panel';
 
 export function Hero({
   section,
@@ -22,6 +23,8 @@ export function Hero({
   if (highlightText) {
     texts = section.title?.split(highlightText, 2);
   }
+
+  const hasEntryPanel = Boolean(section.entry_panel);
 
   return (
     <section
@@ -56,58 +59,108 @@ export function Hero({
         </Link>
       )}
 
-      <div className="relative mx-auto max-w-full px-4 text-center md:max-w-5xl">
-        {texts && texts.length > 0 ? (
-          <h1 className="text-foreground text-4xl font-semibold text-balance sm:mt-12 sm:text-6xl">
-            {texts[0]}
-            <Highlighter action="underline" color="#FF9800">
-              {highlightText}
-            </Highlighter>
-            {texts[1]}
-          </h1>
-        ) : (
-          <h1 className="text-foreground text-4xl font-semibold text-balance sm:mt-12 sm:text-6xl">
-            {section.title}
-          </h1>
+      <div
+        className={cn(
+          'relative mx-auto max-w-full px-4 md:max-w-5xl',
+          hasEntryPanel && 'md:max-w-7xl'
         )}
-
-        <p
-          className="text-muted-foreground mt-8 mb-8 text-lg text-balance"
-          dangerouslySetInnerHTML={{ __html: section.description ?? '' }}
-        />
-
-        {section.buttons && (
-          <div className="flex items-center justify-center gap-4">
-            {section.buttons.map((button, idx) => (
-              <Button
-                asChild
-                size={button.size || 'default'}
-                variant={button.variant || 'default'}
-                className="px-4 text-sm"
-                key={idx}
+      >
+        <div
+          className={cn(
+            hasEntryPanel
+              ? 'space-y-10 text-center'
+              : 'text-center'
+          )}
+        >
+          <div className={cn(hasEntryPanel ? 'mx-auto max-w-4xl' : 'mx-auto')}>
+            {texts && texts.length > 0 ? (
+              <h1
+                className={cn(
+                  'text-foreground text-4xl font-semibold text-balance sm:mt-12 sm:text-6xl',
+                  hasEntryPanel && 'sm:mt-0 sm:text-6xl'
+                )}
               >
-                <Link href={button.url ?? ''} target={button.target ?? '_self'}>
-                  {button.icon && <SmartIcon name={button.icon as string} />}
-                  <span>{button.title}</span>
-                </Link>
-              </Button>
-            ))}
+                {texts[0]}
+                <Highlighter action="underline" color="#FF9800">
+                  {highlightText}
+                </Highlighter>
+                {texts[1]}
+              </h1>
+            ) : (
+              <h1
+                className={cn(
+                  'text-foreground text-4xl font-semibold text-balance sm:mt-12 sm:text-6xl',
+                  hasEntryPanel && 'sm:mt-0 sm:text-6xl'
+                )}
+              >
+                {section.title}
+              </h1>
+            )}
+
+            <p
+              className={cn(
+                'text-muted-foreground mt-8 mb-8 text-lg text-balance',
+                hasEntryPanel ? 'mx-auto max-w-3xl' : ''
+              )}
+              dangerouslySetInnerHTML={{ __html: section.description ?? '' }}
+            />
+
+            {section.buttons && (
+              <div
+                className={cn(
+                  'flex gap-4',
+                  hasEntryPanel
+                    ? 'flex-col items-center justify-center sm:flex-row sm:items-center'
+                    : 'items-center justify-center'
+                )}
+              >
+                {section.buttons.map((button, idx) => (
+                  <Button
+                    asChild
+                    size={button.size || 'default'}
+                    variant={button.variant || 'default'}
+                    className="px-4 text-sm"
+                    key={idx}
+                  >
+                    <Link
+                      href={button.url ?? ''}
+                      target={button.target ?? '_self'}
+                    >
+                      {button.icon && <SmartIcon name={button.icon as string} />}
+                      <span>{button.title}</span>
+                    </Link>
+                  </Button>
+                ))}
+              </div>
+            )}
+
+            {section.tip && (
+              <p
+                className={cn(
+                  'text-muted-foreground mt-6 block text-sm',
+                  'text-center'
+                )}
+                dangerouslySetInnerHTML={{ __html: section.tip ?? '' }}
+              />
+            )}
+
+            {section.show_avatars && (
+              <div className="flex justify-center">
+                <SocialAvatars tip={section.avatars_tip || ''} />
+              </div>
+            )}
           </div>
-        )}
 
-        {section.tip && (
-          <p
-            className="text-muted-foreground mt-6 block text-center text-sm"
-            dangerouslySetInnerHTML={{ __html: section.tip ?? '' }}
-          />
-        )}
-
-        {section.show_avatars && (
-          <SocialAvatars tip={section.avatars_tip || ''} />
-        )}
+          {hasEntryPanel ? (
+            <HeroEntryPanel
+              section={section.entry_panel}
+              className="mx-auto max-w-3xl"
+            />
+          ) : null}
+        </div>
       </div>
 
-      {(section.image?.src || section.image_invert?.src) && (
+      {!hasEntryPanel && (section.image?.src || section.image_invert?.src) && (
         <div className="border-foreground/10 relative mt-8 border-y sm:mt-16">
           <div className="relative z-10 mx-auto max-w-6xl border-x px-3">
             <div className="border-x">

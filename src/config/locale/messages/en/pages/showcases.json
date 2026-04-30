@@ -1,148 +1,397 @@
 {
   "metadata": {
-    "title": "Showcases",
-    "description": "Awesome projects built with ShipAny"
+    "title": "Inspiration",
+    "description": "Browse AI product-image examples by style and quickly find the direction that fits your product"
   },
   "page": {
-    "title": "Showcases",
+    "title": "Inspiration",
     "sections": {
       "showcases": {
         "id": "showcases",
-        "title": "AI SaaS Startups built with ShipAny",
-        "description": "Easy to use and fast to ship.",
+        "title": "Explore product-image examples by style",
+        "description": "These showcase images were generated to match the core style directions featured on the landing page.",
         "groups": [
           {
             "name": "all",
             "title": "All"
           },
           {
-            "name": "ai-chatbot",
-            "title": "AI Chatbot"
+            "name": "clean",
+            "title": "Clean Ecommerce"
           },
           {
-            "name": "ai-image",
-            "title": "AI Image"
+            "name": "luxury",
+            "title": "Luxury Ad"
           },
           {
-            "name": "ai-video",
-            "title": "AI Video"
+            "name": "organic",
+            "title": "Natural Lifestyle"
           },
           {
-            "name": "ai-audio",
-            "title": "AI Audio"
-          },
-          {
-            "name": "ai-music",
-            "title": "AI Music"
-          },
-          {
-            "name": "ai-coding",
-            "title": "AI Coding"
-          },
-          {
-            "name": "other",
-            "title": "Other"
+            "name": "tech",
+            "title": "Tech Launch"
           }
         ],
         "items": [
           {
-            "title": "ThinkAny",
-            "description": "AI Search Engine",
-            "url": "https://thinkany.ai",
-            "target": "_blank",
+            "title": "Clean serum packshot",
+            "description": "A polished white-background hero image for storefronts, product detail pages, and marketplace-ready main product listings.",
             "image": {
-              "src": "/imgs/cases/7.png",
+              "src": "/imgs/cases/generated/clean-packshot.png",
               "alt": "showcases"
             },
-            "group": "ai-chatbot"
+            "group": "clean",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=hyaluronic%20acid%20serum&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "HeyBeauty",
-            "description": "AI Virtual Try On",
-            "url": "https://heybeauty.ai",
-            "target": "_blank",
+            "title": "Clean sunscreen spray packshot",
+            "description": "A bright, platform-friendly white-background visual suited to skincare launches, seasonal campaigns, and fast-moving DTC products.",
             "image": {
-              "src": "/imgs/cases/5.png",
-              "alt": "showcases"
+              "src": "/imgs/cases/generated/clean-sunscreen.png",
+              "alt": "clean ecommerce showcase"
             },
-            "group": "ai-image"
+            "group": "clean",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=sunscreen%20spray&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "AI Wallpaper",
-            "description": "AI Wallpaper Generator",
-            "url": "https://aiwallpaper.shop",
-            "target": "_blank",
+            "title": "Coffee pouch catalog image",
+            "description": "A clean studio treatment for packaged food, drink, and retail shelf-ready hero assets.",
             "image": {
-              "src": "/imgs/cases/1.png",
-              "alt": "showcases"
+              "src": "/imgs/cases/generated/clean-coffee-bag.png",
+              "alt": "clean ecommerce showcase"
             },
-            "group": "ai-image"
+            "group": "clean",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=coffee%20beans&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "AI Cover",
-            "description": "AI Cover Generator",
-            "url": "https://aicover.design",
-            "target": "_blank",
+            "title": "Pet-care spray main image",
+            "description": "A clear, catalog-first product visual that works well for pet care, home care, and utility-focused packaging.",
             "image": {
-              "src": "/imgs/cases/2.png",
-              "alt": "showcases"
+              "src": "/imgs/cases/generated/clean-pet-spray.png",
+              "alt": "clean ecommerce showcase"
             },
-            "group": "ai-image"
+            "group": "clean",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=pet%20odor%20spray&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "GPTs Works",
-            "description": "GPTs Directory",
-            "url": "https://gpts.works",
-            "target": "_blank",
+            "title": "Collagen drink box hero shot",
+            "description": "A structured studio packshot for boxed wellness products, gift sets, and ecommerce first-frame clarity.",
             "image": {
-              "src": "/imgs/cases/3.png",
-              "alt": "showcases"
+              "src": "/imgs/cases/generated/clean-collagen-box.png",
+              "alt": "clean ecommerce showcase"
             },
-            "group": "other"
+            "group": "clean",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=collagen%20drink&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "Melodisco",
-            "description": "AI Music Player",
-            "url": "https://melodis.co",
-            "target": "_blank",
+            "title": "Vitamin gummies jar packshot",
+            "description": "A catalog-style supplement image with a clean silhouette and minimal distractions, ideal for marketplace presentation.",
             "image": {
-              "src": "/imgs/cases/4.png",
-              "alt": "showcases"
+              "src": "/imgs/cases/generated/clean-vitamin-gummies.png",
+              "alt": "clean ecommerce showcase"
             },
-            "group": "ai-music"
+            "group": "clean",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=vitamin%20gummies&style=clean&background=white&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "Pagen",
-            "description": "AI Landing Page Generator",
-            "url": "https://pagen.so",
-            "target": "_blank",
+            "title": "Luxury perfume campaign",
+            "description": "A premium marble-and-spotlight setup for fragrance, beauty, and higher-ticket product storytelling.",
             "image": {
-              "src": "/imgs/cases/6.png",
+              "src": "/imgs/cases/generated/luxury-perfume.png",
               "alt": "showcases"
             },
-            "group": "ai-coding"
+            "group": "luxury",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=perfume&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "SoraFM",
-            "description": "AI Video Generator",
-            "url": "https://sorafm.trys.ai",
-            "target": "_blank",
+            "title": "Luxury cream-jar campaign",
+            "description": "A polished marble-and-metal skincare visual built for premium beauty positioning and higher-ticket product storytelling.",
             "image": {
-              "src": "/imgs/cases/8.png",
-              "alt": "showcases"
+              "src": "/imgs/cases/generated/luxury-cream-jar.png",
+              "alt": "luxury showcase"
             },
-            "group": "ai-video"
+            "group": "luxury",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=facial%20cream&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           },
           {
-            "title": "PodLM",
-            "description": "AI Podcast Generator",
-            "url": "https://podlm.ai",
-            "target": "_blank",
+            "title": "Luxury candle product ad",
+            "description": "A moodier premium lifestyle ad direction for home fragrance, gifting, and editorial-style brand presentation.",
             "image": {
-              "src": "/imgs/cases/9.png",
+              "src": "/imgs/cases/generated/luxury-candle.png",
+              "alt": "luxury showcase"
+            },
+            "group": "luxury",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=scented%20candle&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Olive oil premium display",
+            "description": "A higher-end food-brand direction that feels curated, elevated, and better suited to campaign or gifting use cases.",
+            "image": {
+              "src": "/imgs/cases/generated/luxury-olive-oil.png",
+              "alt": "luxury showcase"
+            },
+            "group": "luxury",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=olive%20oil&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Jewelry box premium visual",
+            "description": "A polished luxury setup for accessories, gifting, and elevated packaging presentation.",
+            "image": {
+              "src": "/imgs/cases/generated/luxury-jewelry-box.png",
+              "alt": "luxury showcase"
+            },
+            "group": "luxury",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=jewelry%20box&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Ampoule serum beauty ad",
+            "description": "A premium glass-and-gold direction for performance skincare, clinic-adjacent beauty brands, and high-end treatment positioning.",
+            "image": {
+              "src": "/imgs/cases/generated/luxury-ampoule.png",
+              "alt": "luxury showcase"
+            },
+            "group": "luxury",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=ampoule%20serum&style=luxury&background=marble&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Organic body-lotion scene",
+            "description": "A softer botanical direction that works especially well for skincare, wellness, clean beauty, and ingredient-led brands.",
+            "image": {
+              "src": "/imgs/cases/generated/organic-lotion.png",
               "alt": "showcases"
             },
-            "group": "ai-audio"
+            "group": "organic",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=body%20lotion&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Probiotic drink lifestyle image",
+            "description": "A brighter, more natural direction for health drinks, wellness brands, and everyday functional products.",
+            "image": {
+              "src": "/imgs/cases/generated/organic-probiotic.png",
+              "alt": "organic showcase"
+            },
+            "group": "organic",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=probiotic%20drink&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Natural shampoo scene",
+            "description": "A clean daylight setup for haircare, botanical formulas, and fresh ingredient-led personal-care branding.",
+            "image": {
+              "src": "/imgs/cases/generated/organic-shampoo.png",
+              "alt": "organic showcase"
+            },
+            "group": "organic",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=natural%20shampoo&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Wellness tea tin scene",
+            "description": "A gentle natural setup for tea, wellness pantry products, and ingredient-conscious daily rituals.",
+            "image": {
+              "src": "/imgs/cases/generated/organic-tea-tin.png",
+              "alt": "organic showcase"
+            },
+            "group": "organic",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=wellness%20tea&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Ceramic hand-soap setup",
+            "description": "A warm home-and-bathroom lifestyle direction for daily-use goods and design-conscious home brands.",
+            "image": {
+              "src": "/imgs/cases/generated/organic-hand-soap.png",
+              "alt": "organic showcase"
+            },
+            "group": "organic",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=hand%20soap&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Sleep oil self-care image",
+            "description": "A soft, botanical scene that works well for aromatherapy, sleep support, and calm ritual-focused products.",
+            "image": {
+              "src": "/imgs/cases/generated/organic-sleep-oil.png",
+              "alt": "organic showcase"
+            },
+            "group": "organic",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=sleep%20oil&style=organic&background=botanical&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Tech earbuds launch image",
+            "description": "A sleek acrylic-stage product visual for consumer electronics, accessories, and launch-day hero graphics.",
+            "image": {
+              "src": "/imgs/cases/generated/tech-earbuds.png",
+              "alt": "showcases"
+            },
+            "group": "tech",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=wireless%20earbuds&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Smart speaker launch card",
+            "description": "A premium launch-day treatment for connected-home hardware and lifestyle electronics.",
+            "image": {
+              "src": "/imgs/cases/generated/tech-smart-speaker.png",
+              "alt": "tech showcase"
+            },
+            "group": "tech",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=smart%20speaker&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Smartwatch release visual",
+            "description": "A cleaner launch aesthetic for wearables, fitness tech, and premium consumer devices.",
+            "image": {
+              "src": "/imgs/cases/generated/tech-projector.png",
+              "alt": "tech showcase"
+            },
+            "group": "tech",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=smartwatch&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Portable projector launch scene",
+            "description": "A stage-like tech presentation that works well for entertainment devices and launch promotions.",
+            "image": {
+              "src": "/imgs/cases/generated/tech-speaker.png",
+              "alt": "tech showcase"
+            },
+            "group": "tech",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=portable%20projector&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Headphones tech campaign",
+            "description": "A premium, launch-ready visual direction for audio gear, hardware accessories, and flagship-product drops.",
+            "image": {
+              "src": "/imgs/cases/generated/tech-headphones.png",
+              "alt": "tech showcase"
+            },
+            "group": "tech",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=headphones&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
+          },
+          {
+            "title": "Power bank launch visual",
+            "description": "A compact tech-product showcase suited to accessories, charging gear, and ecommerce launch assets.",
+            "image": {
+              "src": "/imgs/cases/generated/tech-powerbank.png",
+              "alt": "tech showcase"
+            },
+            "group": "tech",
+            "button": {
+              "title": "Generate this style",
+              "url": "/ai-product-image-generator?product=power%20bank&style=tech&background=acrylic&ratio=1:1",
+              "target": "_self",
+              "icon": "Sparkles"
+            }
           }
         ]
       }

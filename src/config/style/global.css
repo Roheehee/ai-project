@@ -9,8 +9,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      radial-gradient(circle at 0% 0%, color-mix(in oklab, var(--color-primary) 18%, transparent) 0, transparent 28%),
+      radial-gradient(circle at 100% 0%, color-mix(in oklab, var(--color-chart-2) 16%, transparent) 0, transparent 24%),
+      linear-gradient(180deg, color-mix(in oklab, var(--color-background) 92%, white) 0%, var(--color-background) 38%, color-mix(in oklab, var(--color-secondary) 18%, var(--color-background)) 100%);
+    background-attachment: fixed;
   }
 }
 
@@ -37,6 +45,11 @@ textarea {
 
 button {
   @apply border-border outline-ring/50 cursor-pointer;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-primary) 24%, white);
+  color: var(--color-foreground);
 }
 
 pre {

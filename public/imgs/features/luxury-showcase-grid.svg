@@ -1,0 +1,38 @@
+<svg width="1400" height="1040" viewBox="0 0 1400 1040" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="48" x2="1314" y2="988" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6EA"/>
+      <stop offset="1" stop-color="#FFE0B8"/>
+    </linearGradient>
+    <filter id="shadow" x="-40" y="-40" width="1480" height="1120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#C9741A" flood-opacity="0.16"/>
+    </filter>
+    <clipPath id="frame">
+      <rect x="78" y="78" width="1244" height="884" rx="40"/>
+    </clipPath>
+    <clipPath id="tile1"><rect x="112" y="112" width="376" height="376" rx="30"/></clipPath>
+    <clipPath id="tile2"><rect x="512" y="112" width="376" height="376" rx="30"/></clipPath>
+    <clipPath id="tile3"><rect x="912" y="112" width="376" height="376" rx="30"/></clipPath>
+    <clipPath id="tile4"><rect x="112" y="552" width="376" height="376" rx="30"/></clipPath>
+    <clipPath id="tile5"><rect x="512" y="552" width="376" height="376" rx="30"/></clipPath>
+    <clipPath id="tile6"><rect x="912" y="552" width="376" height="376" rx="30"/></clipPath>
+  </defs>
+  <rect width="1400" height="1040" rx="52" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <rect x="78" y="78" width="1244" height="884" rx="40" fill="#FFF9F2"/>
+    <g clip-path="url(#frame)">
+      <image href="/imgs/cases/generated/luxury-perfume.png" x="112" y="112" width="376" height="376" preserveAspectRatio="xMidYMid slice" clip-path="url(#tile1)"/>
+      <image href="/imgs/cases/generated/luxury-cream-jar.png" x="512" y="112" width="376" height="376" preserveAspectRatio="xMidYMid slice" clip-path="url(#tile2)"/>
+      <image href="/imgs/cases/generated/luxury-candle.png" x="912" y="112" width="376" height="376" preserveAspectRatio="xMidYMid slice" clip-path="url(#tile3)"/>
+      <image href="/imgs/cases/generated/luxury-olive-oil.png" x="112" y="552" width="376" height="376" preserveAspectRatio="xMidYMid slice" clip-path="url(#tile4)"/>
+      <image href="/imgs/cases/generated/luxury-jewelry-box.png" x="512" y="552" width="376" height="376" preserveAspectRatio="xMidYMid slice" clip-path="url(#tile5)"/>
+      <image href="/imgs/cases/generated/luxury-ampoule.png" x="912" y="552" width="376" height="376" preserveAspectRatio="xMidYMid slice" clip-path="url(#tile6)"/>
+    </g>
+    <rect x="112" y="112" width="376" height="376" rx="30" stroke="#FFD8AE" stroke-width="6"/>
+    <rect x="512" y="112" width="376" height="376" rx="30" stroke="#FFD8AE" stroke-width="6"/>
+    <rect x="912" y="112" width="376" height="376" rx="30" stroke="#FFD8AE" stroke-width="6"/>
+    <rect x="112" y="552" width="376" height="376" rx="30" stroke="#FFD8AE" stroke-width="6"/>
+    <rect x="512" y="552" width="376" height="376" rx="30" stroke="#FFD8AE" stroke-width="6"/>
+    <rect x="912" y="552" width="376" height="376" rx="30" stroke="#FFD8AE" stroke-width="6"/>
+  </g>
+</svg>

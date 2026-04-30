@@ -2,31 +2,24 @@
   "page": {
     "show_sections": [
       "hero",
-      "logos",
       "introduce",
       "benefits",
       "usage",
       "features",
-      "stats",
-      "testimonials",
       "faq",
       "cta"
     ],
     "sections": {
       "hero": {
         "id": "hero",
-        "title": "Ship AI Startups in hours, not days",
-        "highlight_text": "in hours",
-        "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups.<br/>Ship Fast with a variety of templates and components.",
-        "announcement": {
-          "badge": "New",
-          "title": "🎉 ShipAny Template Two",
-          "url": "/pricing"
-        },
-        "tip": "🎁 Special offer for the first 1000 users",
+        "title": "Generate polished product images",
+        "highlight_text": "polished",
+        "description": "Describe what you want to sell, choose the look, background, and lighting, then generate ecommerce product visuals with a much more commercial-photography feel.<br/>Built for storefronts, marketplaces, PDPs, and paid ads.",
+        "announcement": null,
+        "tip": "",
         "buttons": [
           {
-            "title": "Generate Product Images",
+            "title": "Start Generating",
             "icon": "Sparkles",
             "url": "/ai-product-image-generator",
             "target": "_self",
@@ -40,27 +33,93 @@
             "variant": "outline"
           },
           {
-            "title": "Read Document",
+            "title": "Open Workspace",
             "icon": "BookOpenText",
-            "url": "/docs",
-            "target": "_blank",
+            "url": "/ai-product-image-generator",
+            "target": "_self",
             "variant": "outline"
           }
         ],
-        "show_avatars": true,
-        "avatars_tip": "999+ users are using ShipAny",
+        "show_avatars": false,
+        "avatars_tip": "Made for ecommerce sellers, operators, designers, and lean brand teams",
         "show_award": false,
-        "image": {
-          "src": "/imgs/features/admin.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
-        },
-        "image_invert": {
-          "src": "/imgs/features/admin-dark.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
+        "entry_panel": {
+          "badge": "",
+          "title": "Try a product direction first",
+          "description": "Choose a product, style, and background here. We will carry those selections into the full generator workspace.",
+          "placeholder": "For example: sunscreen spray, coffee beans, bluetooth earbuds, scented candle",
+          "default_product": "hyaluronic acid serum",
+          "submit_label": "Open the full product image workspace",
+          "examples_label": "Popular test products",
+          "examples": [
+            "hyaluronic acid serum",
+            "cold brew coffee beans",
+            "true wireless earbuds",
+            "pet odor spray"
+          ],
+          "style_label": "Visual style",
+          "styles": [
+            {
+              "value": "clean",
+              "label": "Clean Ecommerce"
+            },
+            {
+              "value": "luxury",
+              "label": "Luxury Ad"
+            },
+            {
+              "value": "organic",
+              "label": "Natural Lifestyle"
+            },
+            {
+              "value": "tech",
+              "label": "Tech Launch"
+            }
+          ],
+          "background_label": "Background mood",
+          "backgrounds": [
+            {
+              "value": "white",
+              "label": "Pure White"
+            },
+            {
+              "value": "gradient",
+              "label": "Brand Gradient"
+            },
+            {
+              "value": "marble",
+              "label": "Premium Surface"
+            },
+            {
+              "value": "botanical",
+              "label": "Natural Scene"
+            }
+          ],
+          "ratio_label": "Aspect ratio",
+          "ratios": [
+            {
+              "value": "1:1",
+              "label": "1:1"
+            },
+            {
+              "value": "4:5",
+              "label": "4:5"
+            },
+            {
+              "value": "3:4",
+              "label": "3:4"
+            },
+            {
+              "value": "16:9",
+              "label": "16:9"
+            }
+          ],
+          "bullets": [
+            "Style, background, camera angle, and lighting presets help teams test directions faster",
+            "The full workspace adds richer controls like product details, brand color, and composition",
+            "The landing page already starts the selection flow instead of acting like a static promo screen"
+          ],
+          "note": "This is a lightweight entry panel. Actual generation and download happen in the full product image workspace."
         },
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
@@ -69,7 +128,7 @@
       },
       "logos": {
         "id": "logos",
-        "title": "ShipAny is built on the shoulders of giants",
+        "title": "Built for a complete product-image workflow",
         "items": [
           {
             "title": "Next.js",
@@ -111,45 +170,45 @@
       "introduce": {
         "block": "features-list",
         "id": "introduce",
-        "title": "What is ShipAny",
-        "label": "Introduce",
-        "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups, including templates, components, and documentation.",
+        "title": "This is not a generic image toy. It is shaped around ecommerce product imagery.",
+        "label": "Positioning",
+        "description": "Instead of forcing users to think in technical language, the product turns the biggest commercial image decisions into clear controls.",
         "image": {
-          "src": "/imgs/features/landing-page.png",
+          "src": "/imgs/features/luxury-showcase-grid.svg",
           "alt": "introduce"
         },
         "items": [
           {
-            "title": "Ready-to-use Templates",
-            "description": "Choose from dozens of production-ready AI SaaS templates to quickly start your project.",
-            "icon": "RiNextjsFill",
+            "title": "Centered on what you sell, not on model jargon",
+            "description": "The workflow starts with the product itself, then moves through style, background, lighting, and composition decisions that actually matter for sales visuals.",
+            "icon": "Package2",
             "image": {
               "src": "/imgs/features/1.png",
               "alt": "introduce"
             }
           },
           {
-            "title": "Infrastructure Setup",
-            "description": "Get instant access to scalable infrastructure with best practices built-in.",
-            "icon": "RiDatabase2Line",
+            "title": "Closer to real commercial image direction",
+            "description": "The system leans into product accuracy, material realism, clean edges, believable shadows, and polished commercial retouching.",
+            "icon": "Sparkles",
             "image": {
               "src": "/imgs/features/2.png",
               "alt": "introduce"
             }
           },
           {
-            "title": "Quick Deployment",
-            "description": "Deploy your AI SaaS application to production in hours, not days.",
-            "icon": "RiCloudyFill",
+            "title": "Useful across the ecommerce content stack",
+            "description": "Use the output for homepage hero visuals, product detail pages, marketplace thumbnails, ad creatives, and promotional landing pages.",
+            "icon": "RiImageCircleLine",
             "image": {
               "src": "/imgs/features/3.png",
               "alt": "introduce"
             }
           },
           {
-            "title": "AI Integration",
-            "description": "Integrate AI into your project with ease using our built-in AI SDK.",
-            "icon": "RiRobot2Line",
+            "title": "Fast first step, deeper full workspace after",
+            "description": "The first screen is intentionally interactive, so users can set direction immediately and continue with richer controls inside the main generator.",
+            "icon": "RiSettings4Line",
             "image": {
               "src": "/imgs/features/4.png",
               "alt": "introduce"
@@ -161,34 +220,34 @@
       "benefits": {
         "block": "features-accordion",
         "id": "benefits",
-        "title": "Why Choose ShipAny",
-        "label": "Benefits",
-        "description": "Get everything you need to launch your AI startup - from ready-to-use templates to technical support.",
+        "title": "Why this flow works better for product imagery",
+        "label": "Advantages",
+        "description": "The hard part of ecommerce image generation is not making something pretty. It is producing visuals that feel commercially usable and repeatable. The landing-to-workspace flow is built around that reality.",
         "items": [
           {
-            "title": "Complete Framework",
-            "description": "Built on Next.js with authentication, payments, and AI integration - everything works out of the box.",
-            "icon": "RiNextjsFill",
+            "title": "Presets map to selling contexts",
+            "description": "Instead of vague artistic filters, the presets reflect common business directions like clean white-background main images, luxury ad visuals, natural lifestyle scenes, and tech-launch aesthetics.",
+            "icon": "RiSlideshowLine",
             "image": {
-              "src": "/imgs/features/user-billing.png",
+              "src": "/imgs/features/product-controls.svg",
               "alt": "benefits"
             }
           },
           {
-            "title": "Rich Templates Library",
-            "description": "Choose from various AI SaaS templates to kickstart your project - chatbots, image generation, and more.",
-            "icon": "RiClapperboardAiLine",
+            "title": "Background and lighting shape conversion feel",
+            "description": "The same product can feel cheap, premium, clinical, or lifestyle-led depending on scene and light. That is why those controls are part of the core path.",
+            "icon": "RiSunFoggyLine",
             "image": {
-              "src": "/imgs/features/admin-settings.png",
+              "src": "/imgs/features/product-scene.svg",
               "alt": "benefits"
             }
           },
           {
-            "title": "Technical Guidance",
-            "description": "Get dedicated support and join our developer community to ensure your successful launch.",
-            "icon": "RiCodeFill",
+            "title": "The first screen is part of the workflow",
+            "description": "Users should not bounce between marketing copy and product utility. The first screen already starts the journey into the main workflow.",
+            "icon": "RiRouteLine",
             "image": {
-              "src": "/imgs/features/landing-page.png",
+              "src": "/imgs/features/product-workspace.svg",
               "alt": "benefits"
             }
           }
@@ -197,8 +256,8 @@
       "usage": {
         "block": "features-step",
         "id": "usage",
-        "title": "How to Launch with ShipAny",
-        "description": "Get your AI SaaS startup running in three simple steps:",
+        "title": "Three steps to your first sellable product visual",
+        "description": "The path from the landing page to the full generator is intentionally compact and repeatable:",
         "image": {
           "src": "/imgs/features/1.png",
           "alt": "usage"
@@ -207,32 +266,32 @@
         "text_align": "center",
         "items": [
           {
-            "title": "Get ShipAny",
-            "description": "Buy ShipAny with a one-time payment. Check your email for the code and documentation.",
+            "title": "Enter the product you want to sell",
+            "description": "Start with the actual object: a serum, earbuds, coffee beans, skincare jar, kitchen tool, or pet-care product.",
             "image": {
               "src": "/imgs/features/5.png",
               "alt": "usage"
             }
           },
           {
-            "title": "Start Your Project",
-            "description": "Read the documentation and clone the code of ShipAny. Start building your AI SaaS startup.",
+            "title": "Choose the commercial visual direction",
+            "description": "Pick the style, background, and ratio on the first screen, then refine with brand color, camera angle, lighting, and product details inside the workspace.",
             "image": {
               "src": "/imgs/features/6.png",
               "alt": "usage"
             }
           },
           {
-            "title": "Customize Your Project",
-            "description": "Modify the template with your data and contents. Specific AI functionality needs.",
+            "title": "Generate and compare usable outputs",
+            "description": "Review what works best as a main product image, a paid ad visual, or a stronger PDP support image.",
             "image": {
               "src": "/imgs/features/7.png",
               "alt": "usage"
             }
           },
           {
-            "title": "Deploy to Production",
-            "description": "Deploy your project to production with a few steps and start serving customers immediately.",
+            "title": "Iterate until the brand feel lands",
+            "description": "If the first image is off, switch the background, angle, or lighting instead of starting over blindly.",
             "image": {
               "src": "/imgs/features/8.png",
               "alt": "usage"
@@ -243,50 +302,50 @@
       },
       "features": {
         "id": "features",
-        "title": "Key Features of ShipAny",
-        "description": "Everything you need to launch your AI SaaS startup quickly and efficiently.",
+        "title": "What the current core workflow lets users control",
+        "description": "The interface exposes the choices that matter most for ecommerce visuals, without making users wrestle with raw model settings first.",
         "items": [
           {
-            "title": "Next.js Boilerplate",
-            "description": "Production-ready Next.js templates with SEO-friendly structure and i18n support.",
-            "icon": "RiNextjsFill"
+            "title": "Product input",
+            "description": "Every generation starts with what the user is actually trying to sell, which anchors composition and scene language.",
+            "icon": "Package2"
           },
           {
-            "title": "Authentication & Payments",
-            "description": "Integrated Google OAuth, one-tap login, and Stripe payment processing.",
-            "icon": "RiKey2Fill"
+            "title": "Style presets",
+            "description": "Quickly switch between clean ecommerce, luxury advertising, natural lifestyle, tech-launch, beauty, and food-oriented looks.",
+            "icon": "Palette"
           },
           {
-            "title": "Data Infrastructure",
-            "description": "Built-in Supabase integration for reliable and scalable data storage.",
-            "icon": "RiDatabase2Line"
+            "title": "Background presets",
+            "description": "White seamless, gradients, stone surfaces, botanical scenes, kitchens, vanity setups, and acrylic stages are available as ready directions.",
+            "icon": "ImageIcon"
           },
           {
-            "title": "One-Click Deployment",
-            "description": "Seamless deployment to Vercel or Cloudflare with automated setup.",
-            "icon": "RiCloudy2Fill"
+            "title": "Camera and composition",
+            "description": "Front product shots, three-quarter angles, flat lays, floating packshots, and macro detail views help adapt the story to the product.",
+            "icon": "Camera"
           },
           {
-            "title": "Business Analytics",
-            "description": "Integrated Google Analytics and Search Console for tracking growth.",
-            "icon": "RiBarChart2Line"
+            "title": "Lighting control",
+            "description": "Softbox, daylight, dramatic spotlight, glowing beauty light, and neutral catalog light all change the final commercial feel.",
+            "icon": "Sun"
           },
           {
-            "title": "AI-Ready Infrastructure",
-            "description": "Pre-configured AI integration with built-in credits system and API sales.",
-            "icon": "RiRobot2Line"
+            "title": "Ratio and quality",
+            "description": "Choose square, portrait, and wider layouts with different quality levels for channel-specific output needs.",
+            "icon": "Crop"
           },
           {
-            "title": "AI Ecommerce Product Photography",
-            "description": "Enter the product, choose style, background, and lighting, then generate polished ecommerce-ready hero visuals.",
+            "title": "One-click product image generation",
+            "description": "The generation flow returns downloadable results for rapid visual testing.",
             "icon": "Sparkles"
           }
         ]
       },
       "stats": {
         "id": "stats",
-        "title": "People Love ShipAny",
-        "description": "for it's easy to use and fast to ship.",
+        "title": "Teams prefer a faster product-image workflow",
+        "description": "because it feels clearer and more commercially usable.",
         "items": [
           {
             "title": "999+",
@@ -305,13 +364,13 @@
       },
       "testimonials": {
         "id": "testimonials",
-        "title": "What Users Say About ShipAny",
-        "description": "Hear from developers and founders who launched their AI startups with ShipAny.",
+        "title": "What users say about the workflow",
+        "description": "Representative feedback around speed, clarity, and output direction.",
         "items": [
           {
             "name": "David Chen",
             "role": "Founder of AIWallpaper.shop",
-            "quote": "ShipAny saved us months of development time. We launched our AI wallpaper business in just 2 days and got our first paying customer within a week!",
+            "quote": "We used to burn time aligning on product-visual direction. Now we test the direction first and iterate much faster.",
             "image": {
               "src": "/imgs/avatars/1.png",
               "alt": "david"
@@ -320,7 +379,7 @@
           {
             "name": "Rachel Kim",
             "role": "CTO at HeyBeauty.ai",
-            "quote": "The pre-built AI infrastructure is a game-changer. We didn't have to worry about architecture - just focused on our AI beauty tech and went live fast.",
+            "quote": "The biggest improvement is how much faster the team aligns on direction. We spend less time explaining and more time choosing usable outputs.",
             "image": {
               "src": "/imgs/avatars/2.png",
               "alt": "rachel"
@@ -329,7 +388,7 @@
           {
             "name": "Marcus Thompson",
             "role": "Solo Developer",
-            "quote": "As a solo developer, ShipAny gave me everything I needed - auth, payments, AI integration, and beautiful UI. Launched my SaaS in a weekend!",
+            "quote": "Being able to switch style, background, and lighting directly makes collaboration between ops and design much smoother.",
             "image": {
               "src": "/imgs/avatars/3.png",
               "alt": "marcus"
@@ -338,7 +397,7 @@
           {
             "name": "Sofia Garcia",
             "role": "CEO of Melodisco",
-            "quote": "The templates are production-ready and highly customizable. We built our AI music platform in hours instead of months. Incredible time-to-market!",
+            "quote": "What matters most is how clearly the workflow breaks down product-image decisions. Ops and design get aligned much faster.",
             "image": {
               "src": "/imgs/avatars/4.png",
               "alt": "sofia"
@@ -347,7 +406,7 @@
           {
             "name": "James Wilson",
             "role": "Tech Lead at GPTs.works",
-            "quote": "ShipAny's infrastructure is rock-solid. We scaled from 0 to 10k users without touching the backend. Best investment for our AI startup.",
+            "quote": "The best part is that it does not feel like blind image generation. The workflow is closer to commercial product photography thinking.",
             "image": {
               "src": "/imgs/avatars/5.png",
               "alt": "james"
@@ -356,7 +415,7 @@
           {
             "name": "Anna Zhang",
             "role": "Startup Founder",
-            "quote": "From idea to launch in 3 days! ShipAny's templates and deployment tools made it possible to test our AI business concept incredibly fast.",
+            "quote": "The landing page already acts like an entry point, so new teammates can get into the workflow without extra explanation.",
             "image": {
               "src": "/imgs/avatars/6.png",
               "alt": "anna"
@@ -366,52 +425,52 @@
       },
       "faq": {
         "id": "faq",
-        "title": "Frequently Asked Questions About ShipAny",
-        "description": "Have another question? Contact us on Discord or by email.",
+        "title": "Frequently asked questions about the AI product image workflow",
+        "description": "These are the practical questions most teams ask before using it in a real ecommerce pipeline.",
         "items": [
           {
-            "question": "What exactly is ShipAny and how does it work?",
-            "answer": "ShipAny is a comprehensive NextJS boilerplate designed specifically for building AI SaaS startups. It provides ready-to-use templates, infrastructure setup, and deployment tools that help you launch your AI business in hours instead of days."
+            "question": "Who is this feature best suited for?",
+            "answer": "It is best suited for ecommerce sellers, brand operators, designers, growth teams, and lean founders who need product visuals quickly without depending on a full studio shoot every time."
           },
           {
-            "question": "Do I need advanced technical skills to use ShipAny?",
-            "answer": "While basic programming knowledge is helpful, ShipAny is designed to be developer-friendly. Our templates and documentation make it easy to get started, even if you're not an expert in AI or cloud infrastructure."
+            "question": "How is this different from a generic text-to-image tool?",
+            "answer": "The workflow and presets are tuned for ecommerce product photography use cases. The goal is not just visual novelty, but commercially usable images with stronger product realism and selling intent."
           },
           {
-            "question": "What types of AI SaaS can I build with ShipAny?",
-            "answer": "ShipAny supports a wide range of AI applications, from content generation to data analysis tools. Our templates cover popular use cases like AI chatbots, content generators, image processing apps, and more."
+            "question": "What is the difference between the hero panel and the full workspace?",
+            "answer": "The hero panel is a fast entry point that sets direction. The full workspace is where users refine product details, brand color, lighting, composition, output ratio, and then run the actual generation task."
           },
           {
-            "question": "How long does it typically take to launch with ShipAny?",
-            "answer": "With ShipAny, you can have a working prototype in hours and a production-ready application in hours. Our one-click deployment and pre-configured infrastructure significantly reduce the traditional months-long development cycle."
+            "question": "Can it handle both white-background packshots and moodier ad visuals?",
+            "answer": "Yes. The current setup supports clean white-background product shots as well as more premium, lifestyle, or campaign-style scenes through style and background presets."
           },
           {
-            "question": "What's included in the ShipAny infrastructure?",
-            "answer": "ShipAny provides a complete infrastructure stack including authentication, database setup, API integration, payment processing, and scalable cloud deployment. Everything is pre-configured following industry best practices."
+            "question": "Where can the generated images be used?",
+            "answer": "They can be used for storefront hero sections, product detail pages, marketplace main images, promotional landing pages, and ad creatives. Different ratios make it easier to adapt outputs by channel."
           },
           {
-            "question": "Can I customize the templates to match my brand?",
-            "answer": "Absolutely! All ShipAny templates are fully customizable. You can modify the design, features, and functionality to match your brand identity and specific business requirements while maintaining the robust underlying infrastructure."
+            "question": "What should users do if the first result is not right?",
+            "answer": "The best move is usually to iterate on the controllable inputs: style, background, lighting, camera angle, and brand color. The product is built to make that iteration loop fast and intentional."
           }
         ]
       },
       "cta": {
         "id": "cta",
-        "title": "Ship your first AI SaaS Startup",
-        "description": "Start from here, ship with ShipAny.",
+        "title": "Start from the landing page and make your first product image",
+        "description": "If you already know what you want to sell, open the full workspace now and turn direction into a finished visual.",
         "buttons": [
           {
-            "title": "Get ShipAny",
-            "url": "https://shipany.ai",
-            "target": "_blank",
-            "icon": "Zap"
+            "title": "Open Product Image Workspace",
+            "url": "/ai-product-image-generator",
+            "target": "_self",
+            "icon": "Sparkles"
           },
           {
-            "title": "Read Document",
-            "url": "/docs",
-            "target": "_blank",
+            "title": "View Pricing",
+            "url": "/pricing",
+            "target": "_self",
             "variant": "outline",
-            "icon": "BookOpenText"
+            "icon": "Zap"
           }
         ],
         "className": "bg-muted"
@@ -419,7 +478,7 @@
       "subscribe": {
         "id": "subscribe",
         "title": "Subscribe to our newsletter",
-        "description": "Get the latest news and updates from ShipAny.",
+        "description": "Get the latest product updates and feature news.",
         "submit": {
           "input": {
             "placeholder": "Enter your email"

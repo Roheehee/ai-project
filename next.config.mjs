@@ -1,7 +1,10 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import bundleAnalyzer from '@next/bundle-analyzer';
+import { createMDX } from 'fumadocs-mdx/next';
 import createNextIntlPlugin from 'next-intl/plugin';
+
+const withMDX = createMDX();
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
@@ -60,4 +63,4 @@ const nextConfig = {
   reactCompiler: true,
 };
 
-export default withBundleAnalyzer(withNextIntl(nextConfig));
+export default withBundleAnalyzer(withNextIntl(withMDX(nextConfig)));

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "AI Product Image Generator",
-    "description": "Generate polished ecommerce product visuals with built-in commercial prompts, styles, backgrounds, and lighting presets."
+    "description": "Generate polished ecommerce product visuals with curated styles, backgrounds, and lighting presets."
   },
   "page": {
     "title": "AI Product Image Generator",
@@ -15,22 +15,21 @@
       "product": "What are you selling?",
       "product_placeholder": "Example: a matte black stainless steel water bottle",
       "details": "Key details",
-      "details_placeholder": "Materials, packaging, flavor, texture, audience, premium selling points, what should be visible on the product",
+      "details_placeholder": "Example: 304 stainless steel insulated tumbler, matte black finish, made for commuters, highlight portability and heat retention",
       "brand_color": "Accent color",
       "brand_color_placeholder": "Example: sage green, rose gold, cobalt blue",
-      "tip": "This generator uses internal commercial photography prompts so users can work through structured controls instead of writing a full prompt from scratch.",
       "style": "Style",
       "background": "Background",
       "shot": "Shot Type",
       "lighting": "Lighting",
       "ratio": "Aspect Ratio",
       "quality": "Quality",
-      "thinking": "Thinking Level"
+      "thinking": "Generation Mode"
     },
     "thinking": {
-      "auto": "Auto",
+      "auto": "Balanced",
       "min": "Fast",
-      "high": "High Quality"
+      "high": "Detailed"
     },
     "presets": {
       "clean": "Clean Catalog",
@@ -58,15 +57,13 @@
       "glow": "Glow",
       "catalog": "Catalog Neutral"
     },
-    "prompt_preview": "Built-in Prompt Preview",
-    "empty_prompt": "Describe the product first and the internal prompt builder will compose a commercial photography prompt for you.",
     "generate": "Generate Product Image",
     "generating": "Generating...",
     "progress": "Progress",
-    "preview_title": "Generated Results",
-    "preview_description": "Professional product shots will appear here after the task finishes.",
+    "preview_title": "Results",
+    "preview_description": "Choose your product and style, then generate polished ecommerce product images.",
     "empty_title": "Ready for your first product render",
-    "empty_description": "Pick the look, choose a background, then generate a polished ecommerce visual without writing a full studio prompt.",
+    "empty_description": "Choose your product and style, then generate polished ecommerce product images.",
     "download": "Download",
     "buy_credits": "Buy Credits",
     "credits_cost": "Cost {credits} credits",
