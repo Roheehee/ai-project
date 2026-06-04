@@ -174,8 +174,8 @@
         "label": "Positioning",
         "description": "Instead of forcing users to think in technical language, the product turns the biggest commercial image decisions into clear controls.",
         "image": {
-          "src": "/imgs/features/luxury-showcase-grid.svg",
-          "alt": "introduce"
+          "src": "/imgs/features/picship-white-product-workflow.png",
+          "alt": "PicShip white product image generation workflow"
         },
         "items": [
           {
@@ -229,8 +229,8 @@
             "description": "Instead of vague artistic filters, the presets reflect common business directions like clean white-background main images, luxury ad visuals, natural lifestyle scenes, and tech-launch aesthetics.",
             "icon": "RiSlideshowLine",
             "image": {
-              "src": "/imgs/features/product-controls.svg",
-              "alt": "benefits"
+              "src": "/imgs/features/picship-selling-presets.png",
+              "alt": "PicShip ecommerce selling scenario presets"
             }
           },
           {

@@ -4,8 +4,36 @@ import { getUuid } from '@/shared/lib/hash';
 import { respData, respErr } from '@/shared/lib/resp';
 import { createAITask, NewAITask } from '@/shared/models/ai_task';
 import { getRemainingCredits } from '@/shared/models/credit';
-import { getUserInfo } from '@/shared/models/user';
+import { getRequestUserOrGuest } from '@/shared/models/guest-user';
 import { getAIService } from '@/shared/services/ai';
+
+function mapGenerateErrorMessage(message: string) {
+  const normalized = message.toLowerCase();
+
+  if (
+    normalized.includes('insufficient quota') ||
+    normalized.includes('pre-deduction failed')
+  ) {
+    return 'provider_quota_exceeded';
+  }
+
+  if (
+    normalized.includes('invalid url format') ||
+    normalized.includes('must start with http:// or https://')
+  ) {
+    return 'reference_storage_required';
+  }
+
+  if (
+    normalized.includes('connect timeout') ||
+    normalized.includes('timed out') ||
+    normalized.includes('timeout')
+  ) {
+    return 'provider_timeout';
+  }
+
+  return message;
+}
 
 export async function POST(request: Request) {
   try {
@@ -33,8 +61,10 @@ export async function POST(request: Request) {
       throw new Error('invalid provider');
     }
 
-    // get current user
-    const user = await getUserInfo();
+    // get current user or guest user
+    const { user } = await getRequestUserOrGuest({
+      createGuest: true,
+    });
     if (!user) {
       throw new Error('no auth, please sign in');
     }
@@ -115,6 +145,7 @@ export async function POST(request: Request) {
     return respData(newAITask);
   } catch (e: any) {
     console.log('generate failed', e);
-    return respErr(e.message);
+    const message = e?.message || 'generate failed';
+    return respErr(mapGenerateErrorMessage(message));
   }
 }

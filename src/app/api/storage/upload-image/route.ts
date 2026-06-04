@@ -1,3 +1,6 @@
+import { mkdir, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+
 import { md5 } from '@/shared/lib/hash';
 import { respData, respErr } from '@/shared/lib/resp';
 import { getStorageService } from '@/shared/services/storage';
@@ -15,6 +18,28 @@ const extFromMime = (mimeType: string) => {
     'image/heif': 'heif',
   };
   return map[mimeType] || '';
+};
+
+const saveFileToLocalPublic = async ({
+  body,
+  key,
+}: {
+  body: Uint8Array;
+  key: string;
+}) => {
+  const uploadDir = path.join(process.cwd(), 'public', 'uploads', 'local');
+  await mkdir(uploadDir, { recursive: true });
+
+  const filename = key.replace(/[\\/]/g, '_');
+  const filePath = path.join(uploadDir, filename);
+  await writeFile(filePath, body);
+
+  return {
+    success: true,
+    key: filename,
+    url: `/uploads/local/${filename}`,
+    deduped: false,
+  };
 };
 
 export async function POST(req: Request) {
@@ -37,6 +62,9 @@ export async function POST(req: Request) {
 
     const storageService = await getStorageService();
     const uploadResults = [];
+    const shouldUseLocalFallback =
+      process.env.NODE_ENV !== 'production' &&
+      !(storageService as any)?.defaultProvider;
 
     for (const file of files) {
       // Validate file type
@@ -51,6 +79,17 @@ export async function POST(req: Request) {
       const digest = md5(body);
       const ext = extFromMime(file.type) || file.name.split('.').pop() || 'bin';
       const key = `${digest}.${ext}`;
+
+      if (shouldUseLocalFallback) {
+        const localResult = await saveFileToLocalPublic({ body, key });
+        uploadResults.push({
+          url: localResult.url,
+          key: localResult.key,
+          filename: file.name,
+          deduped: localResult.deduped,
+        });
+        continue;
+      }
 
       // If the same image already exists, reuse its URL to save storage space.
       // (Still depends on provider supporting signed HEAD + public url generation.)
@@ -102,6 +141,12 @@ export async function POST(req: Request) {
     });
   } catch (e) {
     console.error('upload image failed:', e);
-    return respErr('upload image failed');
+    const message = e instanceof Error ? e.message : 'upload image failed';
+
+    if (message.includes('No storage provider configured')) {
+      return respErr('storage_not_configured');
+    }
+
+    return respErr(message);
   }
 }

@@ -12,10 +12,13 @@
     "badge": "电商可用",
     "description": "为高转化主图、详情页视觉和平台白底图而设计。",
     "fields": {
+      "mode": "生成方式",
       "product": "你要卖什么？",
       "product_placeholder": "例如：磨砂黑不锈钢保温杯",
       "details": "商品细节",
       "details_placeholder": "例如：304不锈钢保温杯，磨砂黑外观，适合上班族，突出便携和保温卖点",
+      "reference_image": "上传现有产品图",
+      "reference_image_placeholder": "上传一张你现有的产品图，我们会在保留产品主体的基础上重做更专业的商品图。",
       "brand_color": "品牌点缀色",
       "brand_color_placeholder": "例如：鼠尾草绿、玫瑰金、钴蓝",
       "style": "风格",
@@ -30,6 +33,12 @@
       "auto": "平衡",
       "min": "快速",
       "high": "细致"
+    },
+    "modes": {
+      "text_to_image": "直接生成",
+      "text_to_image_description": "只输入商品信息，直接生成全新商品图。",
+      "image_to_image": "基于现有产品图生成",
+      "image_to_image_description": "上传你的产品图，在保留产品主体基础上重做场景和质感。"
     },
     "presets": {
       "clean": "干净目录风",
@@ -81,6 +90,13 @@
     "errors": {
       "product_required": "请先输入你要卖的商品。",
       "insufficient_credits": "积分不足，请先充值。",
+      "reference_image_required": "请先上传你的产品图。",
+      "reference_uploading": "产品图还在上传中，请稍等。",
+      "reference_upload_failed": "产品图上传失败，请重新上传。",
+      "reference_storage_required": "当前本地上传的产品图只能用于页面预览，想要基于现有产品图生成，请先配置公开图片存储后再试。",
+      "provider_quota_exceeded": "图片生成服务的额度不足了，请先为 Evolink 账户充值，或把清晰度切换到更低档位后再试。",
+      "provider_timeout": "图片生成服务连接超时，请检查网络或代理后重试。",
+      "storage_not_configured": "当前还没有配置正式图片存储，线上使用上传生图前请先配置 R2 或 S3。",
       "failed": "商品图生成失败。",
       "timeout": "生成超时，请重试。",
       "download_failed": "图片下载失败。"

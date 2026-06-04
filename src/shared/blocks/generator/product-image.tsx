@@ -1,11 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   Download,
+  ImageIcon,
   Loader2,
   Package2,
+  PenLine,
   Sparkles,
+  UploadCloud,
 } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -13,6 +16,10 @@ import { toast } from 'sonner';
 
 import { Link } from '@/core/i18n/navigation';
 import { AITaskStatus, AIMediaType } from '@/extensions/ai/types';
+import {
+  ImageUploader,
+  ImageUploaderValue,
+} from '@/shared/blocks/common';
 import { Badge } from '@/shared/components/ui/badge';
 import { Button } from '@/shared/components/ui/button';
 import {
@@ -25,13 +32,6 @@ import {
 import { Input } from '@/shared/components/ui/input';
 import { Label } from '@/shared/components/ui/label';
 import { Progress } from '@/shared/components/ui/progress';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/shared/components/ui/select';
 import { Textarea } from '@/shared/components/ui/textarea';
 import { ToggleGroup, ToggleGroupItem } from '@/shared/components/ui/toggle-group';
 import { useAppContext } from '@/shared/contexts/app';
@@ -51,7 +51,10 @@ interface BackendTask {
   id: string;
   status: string;
   taskInfo: string | null;
+  taskResult: string | null;
 }
+
+type GenerationMode = 'text-to-image' | 'image-to-image';
 
 type PresetOption = {
   id: string;
@@ -209,7 +212,7 @@ const LIGHT_OPTIONS: PresetOption[] = [
   },
 ];
 
-const QUALITY_OPTIONS = ['1K', '2K', '4K'] as const;
+const QUALITY_OPTIONS = ['0.5K', '1K', '2K', '4K'] as const;
 const RATIO_OPTIONS = ['1:1', '4:5', '3:4', '16:9'] as const;
 const THINKING_OPTIONS = ['auto', 'min', 'high'] as const;
 
@@ -247,6 +250,18 @@ function extractImageUrls(result: any): string[] {
       .filter(Boolean);
   }
 
+  if (Array.isArray(result?.result_data)) {
+    return result.result_data
+      .map((item: any) => item?.url || item?.imageUrl || item)
+      .filter(Boolean);
+  }
+
+  if (Array.isArray(result?.results)) {
+    return result.results
+      .map((item: any) => item?.url || item?.imageUrl || item)
+      .filter(Boolean);
+  }
+
   return [];
 }
 
@@ -268,7 +283,9 @@ function buildPrompt({
   lightPrompt: string;
 }) {
   const segments = [
-    `Create a professional ecommerce product image for ${product}.`,
+    product
+      ? `Create a professional ecommerce product image for ${product}.`
+      : 'Create a professional ecommerce product image for the uploaded reference product.',
     'The image should look like a premium commercial product photography shoot for a high-converting online store.',
     stylePrompt,
     backgroundPrompt,
@@ -286,6 +303,28 @@ function buildPrompt({
   return segments.filter(Boolean).join(' ');
 }
 
+function resolveGeneratorErrorMessage(
+  message: string | undefined,
+  t: ReturnType<typeof useTranslations>
+) {
+  if (!message) {
+    return t('errors.failed');
+  }
+
+  if (
+    message.startsWith('errors.') ||
+    message === 'provider_quota_exceeded' ||
+    message === 'provider_timeout' ||
+    message === 'reference_storage_required' ||
+    message === 'storage_not_configured'
+  ) {
+    const key = message.startsWith('errors.') ? message.slice(7) : message;
+    return t(`errors.${key}`);
+  }
+
+  return message;
+}
+
 export function ProductImageGenerator({
   className,
   srOnlyTitle,
@@ -299,10 +338,16 @@ export function ProductImageGenerator({
   const [background, setBackground] = useState(BACKGROUND_OPTIONS[0].id);
   const [shot, setShot] = useState(SHOT_OPTIONS[0].id);
   const [lighting, setLighting] = useState(LIGHT_OPTIONS[0].id);
+  const [generationMode, setGenerationMode] =
+    useState<GenerationMode>('text-to-image');
   const [ratio, setRatio] = useState<(typeof RATIO_OPTIONS)[number]>('1:1');
-  const [quality, setQuality] = useState<(typeof QUALITY_OPTIONS)[number]>('2K');
+  const [quality, setQuality] = useState<(typeof QUALITY_OPTIONS)[number]>('0.5K');
   const [thinkingLevel, setThinkingLevel] =
-    useState<(typeof THINKING_OPTIONS)[number]>('auto');
+    useState<(typeof THINKING_OPTIONS)[number]>('min');
+  const [referenceImageItems, setReferenceImageItems] = useState<
+    ImageUploaderValue[]
+  >([]);
+  const [referenceImageUrls, setReferenceImageUrls] = useState<string[]>([]);
   const [generatedImages, setGeneratedImages] = useState<GeneratedImage[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -315,9 +360,12 @@ export function ProductImageGenerator({
     null
   );
 
-  const { user, setIsShowSignModal, fetchUserCredits } = useAppContext();
-  const remainingCredits = user?.credits?.remainingCredits ?? 0;
-  const costCredits = 2;
+  const [guestCredits, setGuestCredits] = useState(0);
+
+  const { user, fetchUserCredits } = useAppContext();
+  const remainingCredits = user?.credits?.remainingCredits ?? guestCredits;
+  const isReferenceMode = generationMode === 'image-to-image';
+  const costCredits = isReferenceMode ? 4 : 2;
 
   const selectedStyle =
     STYLE_OPTIONS.find((item) => item.id === style) || STYLE_OPTIONS[0];
@@ -329,6 +377,57 @@ export function ProductImageGenerator({
   const selectedLighting =
     LIGHT_OPTIONS.find((item) => item.id === lighting) || LIGHT_OPTIONS[0];
 
+  const handleReferenceImagesChange = useCallback(
+    (items: ImageUploaderValue[]) => {
+      setReferenceImageItems(items);
+
+      const uploadedUrls = items
+        .filter((item) => item.status === 'uploaded' && item.url)
+        .map((item) => item.url as string);
+
+      setReferenceImageUrls(uploadedUrls);
+    },
+    []
+  );
+
+  const isReferenceUploading = referenceImageItems.some(
+    (item) => item.status === 'uploading'
+  );
+  const hasReferenceUploadError = referenceImageItems.some(
+    (item) => item.status === 'error'
+  );
+  const isLocalFallbackReference = referenceImageUrls.some((url) =>
+    url.startsWith('/uploads/local/')
+  );
+
+  const refreshCredits = useCallback(async () => {
+    if (user) {
+      await fetchUserCredits();
+      return;
+    }
+
+    try {
+      const resp = await fetch('/api/user/get-user-credits', {
+        method: 'POST',
+      });
+      if (!resp.ok) {
+        throw new Error(`fetch failed with status: ${resp.status}`);
+      }
+
+      const result = await resp.json();
+      if (result.code !== 0) {
+        throw new Error(result.message || t('errors.failed'));
+      }
+
+      setGuestCredits(result.data?.remainingCredits || 0);
+    } catch (error) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('fetch guest credits failed:', error);
+      }
+      setGuestCredits(0);
+    }
+  }, [fetchUserCredits, t, user]);
+
   useEffect(() => {
     const initialProduct = searchParams.get('product');
     const initialDetails = searchParams.get('details');
@@ -337,6 +436,7 @@ export function ProductImageGenerator({
     const initialBackground = searchParams.get('background');
     const initialShot = searchParams.get('shot');
     const initialLighting = searchParams.get('lighting');
+    const initialMode = searchParams.get('mode');
     const initialRatio = searchParams.get('ratio');
     const initialQuality = searchParams.get('quality');
     const initialThinking = searchParams.get('thinking');
@@ -363,6 +463,12 @@ export function ProductImageGenerator({
       setLighting(initialLighting);
     }
     if (
+      initialMode &&
+      ['text-to-image', 'image-to-image'].includes(initialMode)
+    ) {
+      setGenerationMode(initialMode as GenerationMode);
+    }
+    if (
       initialRatio &&
       RATIO_OPTIONS.includes(initialRatio as (typeof RATIO_OPTIONS)[number])
     ) {
@@ -385,6 +491,10 @@ export function ProductImageGenerator({
       setThinkingLevel(initialThinking as (typeof THINKING_OPTIONS)[number]);
     }
   }, [searchParams]);
+
+  useEffect(() => {
+    void refreshCredits();
+  }, [refreshCredits]);
 
   const composedPrompt = buildPrompt({
     product: product.trim(),
@@ -433,7 +543,11 @@ export function ProductImageGenerator({
         const task = result.data as BackendTask;
         const status = task.status as AITaskStatus;
         const taskInfo = parseTaskInfo(task.taskInfo);
-        const imageUrls = extractImageUrls(taskInfo);
+        const taskResult = parseTaskInfo(task.taskResult);
+        const imageUrls = [
+          ...extractImageUrls(taskInfo),
+          ...extractImageUrls(taskResult),
+        ].filter((url, index, urls) => urls.indexOf(url) === index);
 
         setTaskStatus(status);
 
@@ -459,7 +573,7 @@ export function ProductImageGenerator({
           setTaskId(null);
           setTaskStatus(null);
           toast.success(t('success.generated'));
-          fetchUserCredits();
+          void refreshCredits();
           return;
         }
 
@@ -468,15 +582,17 @@ export function ProductImageGenerator({
           setTaskId(null);
           setProgress(0);
           setTaskStatus(null);
-          toast.error(taskInfo?.errorMessage || t('errors.failed'));
-          fetchUserCredits();
+          toast.error(
+            resolveGeneratorErrorMessage(taskInfo?.errorMessage, t)
+          );
+          void refreshCredits();
         }
       } catch (error: any) {
         setIsGenerating(false);
         setTaskId(null);
         setProgress(0);
         setTaskStatus(null);
-        toast.error(error.message || t('errors.failed'));
+        toast.error(resolveGeneratorErrorMessage(error.message, t));
       }
     };
 
@@ -492,16 +608,31 @@ export function ProductImageGenerator({
       cancelled = true;
       clearInterval(interval);
     };
-  }, [taskId, isGenerating, generationStartTime, t, fetchUserCredits]);
+  }, [taskId, isGenerating, generationStartTime, refreshCredits, t]);
 
   async function handleGenerate() {
-    if (!user) {
-      setIsShowSignModal(true);
+    if (!isReferenceMode && !product.trim()) {
+      toast.error(t('errors.product_required'));
       return;
     }
 
-    if (!product.trim()) {
-      toast.error(t('errors.product_required'));
+    if (isReferenceMode && referenceImageUrls.length === 0) {
+      toast.error(t('errors.reference_image_required'));
+      return;
+    }
+
+    if (isReferenceMode && isLocalFallbackReference) {
+      toast.error(t('errors.reference_storage_required'));
+      return;
+    }
+
+    if (isReferenceUploading) {
+      toast.error(t('errors.reference_uploading'));
+      return;
+    }
+
+    if (hasReferenceUploadError) {
+      toast.error(t('errors.reference_upload_failed'));
       return;
     }
 
@@ -524,11 +655,16 @@ export function ProductImageGenerator({
         },
         body: JSON.stringify({
           mediaType: AIMediaType.IMAGE,
-          scene: 'text-to-image',
+          scene: isReferenceMode ? 'image-to-image' : 'text-to-image',
           provider: PROVIDER,
           model: MODEL,
           prompt: composedPrompt,
           options: {
+            ...(isReferenceMode
+              ? {
+                  image_input: referenceImageUrls,
+                }
+              : {}),
             size: ratio,
             quality,
             model_params: {
@@ -540,7 +676,9 @@ export function ProductImageGenerator({
 
       const result = await resp.json();
       if (!resp.ok || result.code !== 0) {
-        throw new Error(result.message || t('errors.failed'));
+        throw new Error(
+          resolveGeneratorErrorMessage(result.message, t)
+        );
       }
 
       if (!result.data?.id) {
@@ -549,12 +687,12 @@ export function ProductImageGenerator({
 
       setTaskId(result.data.id);
       setProgress(25);
-      fetchUserCredits();
+      void refreshCredits();
     } catch (error: any) {
       setIsGenerating(false);
       setProgress(0);
       setTaskStatus(null);
-      toast.error(error.message || t('errors.failed'));
+      toast.error(resolveGeneratorErrorMessage(error.message, t));
     }
   }
 
@@ -607,36 +745,127 @@ export function ProductImageGenerator({
               </CardHeader>
               <CardContent className="space-y-8">
                 <div className="space-y-3">
-                  <Label htmlFor="product-name">{t('fields.product')}</Label>
-                  <Input
-                    id="product-name"
-                    value={product}
-                    onChange={(event) => setProduct(event.target.value)}
-                    placeholder={t('fields.product_placeholder')}
-                  />
+                  <Label className="text-base font-semibold">
+                    {t('fields.mode')}
+                  </Label>
+                  <ToggleGroup
+                    type="single"
+                    value={generationMode}
+                    onValueChange={(value) => {
+                      if (value) {
+                        setGenerationMode(value as GenerationMode);
+                      }
+                    }}
+                    className="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                  >
+                    <ToggleGroupItem
+                      value="text-to-image"
+                      aria-label={t('modes.text_to_image')}
+                      className="group h-auto justify-start rounded-lg border border-border/70 bg-background px-4 py-4 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/5 hover:shadow-md data-[state=on]:border-primary data-[state=on]:bg-primary/10 data-[state=on]:shadow-[0_10px_24px_rgba(249,115,22,0.16)]"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-data-[state=on]:bg-primary group-data-[state=on]:text-primary-foreground">
+                          <PenLine className="size-4" />
+                        </span>
+                        <span className="min-w-0 space-y-1">
+                          <span className="block text-base font-semibold leading-none">
+                            {t('modes.text_to_image')}
+                          </span>
+                          <span className="block whitespace-normal text-sm leading-5 text-muted-foreground">
+                            {t('modes.text_to_image_description')}
+                          </span>
+                        </span>
+                      </div>
+                    </ToggleGroupItem>
+                    <ToggleGroupItem
+                      value="image-to-image"
+                      aria-label={t('modes.image_to_image')}
+                      className="group h-auto justify-start rounded-lg border border-border/70 bg-background px-4 py-4 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/5 hover:shadow-md data-[state=on]:border-primary data-[state=on]:bg-primary/10 data-[state=on]:shadow-[0_10px_24px_rgba(249,115,22,0.16)]"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors group-data-[state=on]:bg-primary group-data-[state=on]:text-primary-foreground">
+                          <UploadCloud className="size-4" />
+                        </span>
+                        <span className="min-w-0 space-y-1">
+                          <span className="block text-base font-semibold leading-none">
+                            {t('modes.image_to_image')}
+                          </span>
+                          <span className="block whitespace-normal text-sm leading-5 text-muted-foreground">
+                            {t('modes.image_to_image_description')}
+                          </span>
+                        </span>
+                      </div>
+                    </ToggleGroupItem>
+                  </ToggleGroup>
                 </div>
 
-                <div className="grid gap-5 md:grid-cols-2">
+                {!isReferenceMode ? (
                   <div className="space-y-3">
-                    <Label htmlFor="product-details">{t('fields.details')}</Label>
-                    <Textarea
-                      id="product-details"
-                      value={details}
-                      onChange={(event) => setDetails(event.target.value)}
-                      placeholder={t('fields.details_placeholder')}
-                      rows={5}
-                    />
-                  </div>
-                  <div className="space-y-3">
-                    <Label htmlFor="brand-color">{t('fields.brand_color')}</Label>
+                    <Label htmlFor="product-name">{t('fields.product')}</Label>
                     <Input
-                      id="brand-color"
-                      value={brandColor}
-                      onChange={(event) => setBrandColor(event.target.value)}
-                      placeholder={t('fields.brand_color_placeholder')}
+                      id="product-name"
+                      value={product}
+                      onChange={(event) => setProduct(event.target.value)}
+                      placeholder={t('fields.product_placeholder')}
                     />
                   </div>
-                </div>
+                ) : null}
+
+                {isReferenceMode ? (
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <ImageIcon className="text-primary size-4" />
+                      <Label>{t('fields.reference_image')}</Label>
+                    </div>
+                    <ImageUploader
+                      title={t('fields.reference_image')}
+                      showTitle={false}
+                      allowMultiple={false}
+                      maxImages={1}
+                      maxSizeMB={10}
+                      onChange={handleReferenceImagesChange}
+                      emptyHint={t('fields.reference_image_placeholder')}
+                    />
+                    {hasReferenceUploadError ? (
+                      <p className="text-destructive text-xs">
+                        {t('errors.reference_upload_failed')}
+                      </p>
+                    ) : null}
+                    {!hasReferenceUploadError && isLocalFallbackReference ? (
+                      <p className="text-muted-foreground text-xs">
+                        {t('errors.reference_storage_required')}
+                      </p>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                {!isReferenceMode ? (
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div className="space-y-3">
+                      <Label htmlFor="product-details">
+                        {t('fields.details')}
+                      </Label>
+                      <Textarea
+                        id="product-details"
+                        value={details}
+                        onChange={(event) => setDetails(event.target.value)}
+                        placeholder={t('fields.details_placeholder')}
+                        rows={5}
+                      />
+                    </div>
+                    <div className="space-y-3">
+                      <Label htmlFor="brand-color">
+                        {t('fields.brand_color')}
+                      </Label>
+                      <Input
+                        id="brand-color"
+                        value={brandColor}
+                        onChange={(event) => setBrandColor(event.target.value)}
+                        placeholder={t('fields.brand_color_placeholder')}
+                      />
+                    </div>
+                  </div>
+                ) : null}
 
                 <div className="space-y-6">
                   <PresetGroup
@@ -695,46 +924,52 @@ export function ProductImageGenerator({
 
                   <div className="space-y-3">
                     <Label>{t('fields.quality')}</Label>
-                    <Select
+                    <ToggleGroup
+                      type="single"
                       value={quality}
                       onValueChange={(value) =>
+                        value &&
                         setQuality(value as (typeof QUALITY_OPTIONS)[number])
                       }
+                      variant="outline"
+                      className="grid w-full grid-cols-2 gap-2"
                     >
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {QUALITY_OPTIONS.map((item) => (
-                          <SelectItem key={item} value={item}>
-                            {item}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                      {QUALITY_OPTIONS.map((item) => (
+                        <ToggleGroupItem
+                          key={item}
+                          value={item}
+                          className="rounded-md border"
+                        >
+                          {item}
+                        </ToggleGroupItem>
+                      ))}
+                    </ToggleGroup>
                   </div>
 
                   <div className="space-y-3">
                     <Label>{t('fields.thinking')}</Label>
-                    <Select
+                    <ToggleGroup
+                      type="single"
                       value={thinkingLevel}
                       onValueChange={(value) =>
+                        value &&
                         setThinkingLevel(
                           value as (typeof THINKING_OPTIONS)[number]
                         )
                       }
+                      variant="outline"
+                      className="grid w-full grid-cols-3 gap-2"
                     >
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {THINKING_OPTIONS.map((item) => (
-                          <SelectItem key={item} value={item}>
-                            {t(`thinking.${item}`)}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                      {THINKING_OPTIONS.map((item) => (
+                        <ToggleGroupItem
+                          key={item}
+                          value={item}
+                          className="rounded-md border px-2"
+                        >
+                          {t(`thinking.${item}`)}
+                        </ToggleGroupItem>
+                      ))}
+                    </ToggleGroup>
                   </div>
                 </div>
 

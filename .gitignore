@@ -64,3 +64,6 @@ src/config/db/migrations*
 .source
 
 .chats
+
+# local uploaded test assets
+public/uploads/

@@ -23,6 +23,7 @@ interface ImageUploaderProps {
   maxImages?: number;
   maxSizeMB?: number;
   title?: string;
+  showTitle?: boolean;
   emptyHint?: string;
   className?: string;
   defaultPreviews?: string[];
@@ -69,6 +70,7 @@ export function ImageUploader({
   maxImages = 1,
   maxSizeMB = 10,
   title,
+  showTitle = true,
   emptyHint,
   className,
   defaultPreviews,
@@ -479,7 +481,7 @@ export function ImageUploader({
         className="hidden"
       />
 
-      {title && (
+      {showTitle && title && (
         <div className="text-foreground flex items-center justify-between text-sm font-medium">
           <div className="flex items-center gap-2">
             <ImageIcon className="text-primary h-4 w-4" />
@@ -567,7 +569,11 @@ export function ImageUploader({
         )}
       </div>
 
-      {!title && (
+      {!showTitle && emptyHint ? (
+        <div className="text-muted-foreground text-xs">{emptyHint}</div>
+      ) : null}
+
+      {showTitle && !title && (
         <div className="text-muted-foreground text-xs">{emptyHint}</div>
       )}
     </div>

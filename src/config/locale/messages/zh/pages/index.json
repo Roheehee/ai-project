@@ -173,8 +173,8 @@
         "label": "产品定位",
         "description": "我们把商品摄影里最常见、最费时间的决策项拆成可选控件，让非设计师也能更稳定地生成像样的电商视觉。",
         "image": {
-          "src": "/imgs/features/luxury-showcase-grid.svg",
-          "alt": "introduce"
+          "src": "/imgs/features/picship-white-product-workflow.png",
+          "alt": "PicShip 白色商品图生成工作流"
         },
         "items": [
           {
@@ -228,8 +228,8 @@
             "description": "不是抽象的艺术风格，而是围绕白底主图、高端广告、自然生活感、科技发布感等常见商业风格预设。",
             "icon": "RiSlideshowLine",
             "image": {
-              "src": "/imgs/features/product-controls.svg",
-              "alt": "benefits"
+              "src": "/imgs/features/picship-selling-presets.png",
+              "alt": "PicShip 商品图商业场景预设"
             }
           },
           {

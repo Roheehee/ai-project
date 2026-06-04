@@ -12,10 +12,13 @@
     "badge": "Ecommerce Ready",
     "description": "Built for high-converting hero shots, catalog images, and marketplace-ready product visuals.",
     "fields": {
+      "mode": "Generation Mode",
       "product": "What are you selling?",
       "product_placeholder": "Example: a matte black stainless steel water bottle",
       "details": "Key details",
       "details_placeholder": "Example: 304 stainless steel insulated tumbler, matte black finish, made for commuters, highlight portability and heat retention",
+      "reference_image": "Upload your existing product image",
+      "reference_image_placeholder": "Upload a product photo you already have and we'll rebuild it into a more polished ecommerce visual.",
       "brand_color": "Accent color",
       "brand_color_placeholder": "Example: sage green, rose gold, cobalt blue",
       "style": "Style",
@@ -30,6 +33,12 @@
       "auto": "Balanced",
       "min": "Fast",
       "high": "Detailed"
+    },
+    "modes": {
+      "text_to_image": "Generate from text",
+      "text_to_image_description": "Describe the product and create a brand-new product visual.",
+      "image_to_image": "Generate from your product photo",
+      "image_to_image_description": "Upload your existing product photo and rebuild the scene while keeping the product itself."
     },
     "presets": {
       "clean": "Clean Catalog",
@@ -81,6 +90,13 @@
     "errors": {
       "product_required": "Please enter the product you want to sell.",
       "insufficient_credits": "Insufficient credits. Please top up to continue.",
+      "reference_image_required": "Please upload your product image first.",
+      "reference_uploading": "Your product image is still uploading. Please wait a moment.",
+      "reference_upload_failed": "The product image upload failed. Please upload it again.",
+      "reference_storage_required": "This local upload only works for preview. To generate from your existing product photo, please configure public image storage first.",
+      "provider_quota_exceeded": "The connected image service is out of credits. Please top up the Evolink account, or lower the quality and try again.",
+      "provider_timeout": "The image service connection timed out. Please check your network or proxy and try again.",
+      "storage_not_configured": "No production image storage is configured yet. Please set up R2 or S3 before using upload-based generation online.",
       "failed": "Failed to generate the product image.",
       "timeout": "Image generation timed out. Please try again.",
       "download_failed": "Failed to download the image."

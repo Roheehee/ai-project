@@ -4,7 +4,7 @@ import {
   UpdateAITask,
   updateAITaskById,
 } from '@/shared/models/ai_task';
-import { getUserInfo } from '@/shared/models/user';
+import { getRequestUserOrGuest } from '@/shared/models/guest-user';
 import { getAIService } from '@/shared/services/ai';
 
 export async function POST(req: Request) {
@@ -14,7 +14,7 @@ export async function POST(req: Request) {
       return respErr('invalid params');
     }
 
-    const user = await getUserInfo();
+    const { user } = await getRequestUserOrGuest();
     if (!user) {
       return respErr('no auth, please sign in');
     }

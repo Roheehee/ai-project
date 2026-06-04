@@ -23,6 +23,8 @@ type EvolinkTaskResponse = {
   status?: string;
   progress?: number;
   task_info?: Record<string, any>;
+  result_data?: any;
+  results?: any;
   output?: any;
   data?: any;
   error?: {
@@ -198,7 +200,11 @@ export class EvolinkProvider implements AIProvider {
 
   private extractImages(data: EvolinkTaskResponse): AIImage[] {
     const output =
+      data?.result_data ||
+      data?.results ||
       data?.output ||
+      data?.data?.result_data ||
+      data?.data?.results ||
       data?.data?.output ||
       data?.data?.images ||
       data?.data?.result ||
